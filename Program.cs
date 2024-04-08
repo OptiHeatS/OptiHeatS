@@ -7,7 +7,7 @@ namespace OptiHeatPro
     // Main class to run the application
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             // Creating instances of Boiler
             Boiler boiler1 = new Boiler("GB", 5.0, 500, 215, 1.1);
