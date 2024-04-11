@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stefa\\OneDrive\\Desktop\\OptiHeat\\OptiHeatS\\OptiHeatS.csproj": {}
+    "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stefa\\OneDrive\\Desktop\\OptiHeat\\OptiHeatS\\OptiHeatS.csproj": {
+    "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefa\\OneDrive\\Desktop\\OptiHeat\\OptiHeatS\\OptiHeatS.csproj",
+        "projectUniqueName": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
         "projectName": "OptiHeatS",
-        "projectPath": "C:\\Users\\stefa\\OneDrive\\Desktop\\OptiHeat\\OptiHeatS\\OptiHeatS.csproj",
-        "packagesPath": "C:\\Users\\stefa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefa\\OneDrive\\Desktop\\OptiHeat\\OptiHeatS\\obj\\",
+        "projectPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+        "packagesPath": "C:\\Users\\Benediktas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\stefa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Benediktas\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,17 +32,36 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.ReactiveUI": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -66,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OptiHeatPro.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        Width="500"
+        Height="200"
+        x:Class="OptiHeatPro.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="..\Assets\avalonia-logo.ico"
+        Title="OptiHeatPro">
+    
+    <StackPanel Margin="5">
+        <Border CornerRadius="0" Background="LightGray">
+            <TextBlock Margin="5" FontSize="24" HorizontalAlignment="Center" Text="Boiler information"/>
+        </Border>
+    <Grid ShowGridLines="True" Margin="5"
+      ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" 
+      RowDefinitions="Auto, Auto,Auto,Auto, Auto">
+      <Label Grid.Row="0" Grid.Column="0">Name</Label>
+      <!-- Gas boiler -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Boiler1.Name}" Margin="5"/>
+      <!-- Oil boiler -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Boiler2.Name}" Margin="5"/>
+      <Label Grid.Row="0" Grid.Column="1">Max heat</Label>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Boiler1.MaxHeat}" Margin="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Boiler2.MaxHeat}" Margin="5"/>
+      <Label Grid.Row="0" Grid.Column="2">Production Costs</Label>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Boiler1.ProductionCosts}" Margin="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Boiler2.ProductionCosts}" Margin="5"/>
+      <Label Grid.Row="0" Grid.Column="3">CO2 Emissions</Label>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding Boiler1.CO2Emissions}" Margin="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Boiler2.CO2Emissions}" Margin="5"/>
+      <Label Grid.Row="0" Grid.Column="4">Gas Consumption</Label>
+        <TextBlock Grid.Row="1" Grid.Column="4" Text="{Binding Boiler1.GasConsumption}" Margin="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding Boiler2.GasConsumption}" Margin="5"/>
+
+
+    </Grid>
+        
+            <!-- Iteration 2 boilers -->
+            <!-- <TextBlock Text="{Binding Boiler3.Name}" Margin="5"/> -->
+            <!-- <TextBlock Text="{Binding Boiler4.Name}" Margin="5"/> -->
+    </StackPanel>
+
+</Window>
