@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "txYVp1V4IU2f/5SjTyjtopzkY4/H8BI4cz06jgNuiBylRaYpL8R/9p0B+89IdPc5a/d1mnft6uBLP6PsgJZqFw==",
+  "dgSpecHash": "n9OFMXcoGvnzDSocnN8bpp38NvyAgK8FwsK8+bVJI1Z611HpKn6gQMkzYeJPtMg1FO2UBGFRo3P0wqJk/PdREg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\OptiHeatS.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simon\\.nuget\\packages\\epplus\\7.0.10\\epplus.7.0.10.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",

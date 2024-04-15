@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\OptiHeatS.csproj": {}
+    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\OptiHeatS.csproj": {
+    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\OptiHeatS.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS.csproj",
         "projectName": "OptiHeatS",
-        "projectPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\OptiHeatS.csproj",
+        "projectPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS.csproj",
         "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\OptiHeatS\\obj\\",
+        "outputPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiheatS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
