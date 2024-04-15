@@ -5506,24 +5506,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Benediktas\\.nuget\\packages\\": {}
+    "C:\\Users\\alexf\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+      "projectUniqueName": "C:\\Users\\alexf\\Documents\\OptiHeatS\\OptiHeatS.csproj",
       "projectName": "OptiHeatS",
-      "projectPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
-      "packagesPath": "C:\\Users\\Benediktas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\",
+      "projectPath": "C:\\Users\\alexf\\Documents\\OptiHeatS\\OptiHeatS.csproj",
+      "packagesPath": "C:\\Users\\alexf\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alexf\\Documents\\OptiHeatS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Benediktas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\alexf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5536,6 +5538,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5587,7 +5594,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
