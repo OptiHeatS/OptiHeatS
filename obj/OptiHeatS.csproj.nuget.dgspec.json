@@ -61,10 +61,6 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.0.10, )"
-            },
-            "EPPlus": {
-              "target": "Package",
-              "version": "[7.0.10, )"
             }
           },
           "imports": [
