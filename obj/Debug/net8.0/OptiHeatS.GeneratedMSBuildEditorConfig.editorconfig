@@ -13,12 +13,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OptiHeatS
-build_property.ProjectDir = C:\Users\PC\Desktop\Semester project\OptiHeatS\
+build_property.ProjectDir = C:\Users\Benediktas\Desktop\OptiHeatS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/App.axaml]
+[C:/Users/Benediktas/Desktop/OptiHeatS/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/MainWindow.axaml]
+[C:/Users/Benediktas/Desktop/OptiHeatS/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
