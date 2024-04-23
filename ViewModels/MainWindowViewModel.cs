@@ -10,7 +10,11 @@ namespace OptiHeatPro.ViewModels
         private ObservableCollection<DataEntry> _winterData;
         private ObservableCollection<DataEntry> _summerData;
 
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+#pragma warning disable CS8612 // Nullability of reference types in type doesn't match implicitly implemented member.
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS8612 // Nullability of reference types in type doesn't match implicitly implemented member.
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         public ObservableCollection<DataEntry> WinterData
         {
@@ -43,12 +47,22 @@ namespace OptiHeatPro.ViewModels
         public Boiler Boiler3 { get; } = new Boiler("GM", 3.6, 2.7, 1100, 640, 1.9);
         public Boiler Boiler4 { get; } = new Boiler("EK", 8.0, -8.0, 50);
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public MainWindowViewModel()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _heatingData = new HeatingData();
             _heatingData.Read();
+#pragma warning disable CS8604 // Possible null reference argument.
             WinterData = new ObservableCollection<DataEntry>(_heatingData.WinterData);
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning disable CS8604 // Possible null reference argument.
             SummerData = new ObservableCollection<DataEntry>(_heatingData.SummerData);
+#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         // This method is called to notify the UI that a property has changed
