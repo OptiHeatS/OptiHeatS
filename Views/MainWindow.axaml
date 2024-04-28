@@ -7,6 +7,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight=""
         x:Class="OptiHeatPro.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        xmlns:local="clr-namespace:OptiHeatPro.Views"
         Icon="..\Assets\avalonia-logo.ico"
         Title="OptiHeatPro"
         Width="1260" Height="660">
@@ -19,174 +20,17 @@
         </Border>
         <TabControl TabStripPlacement="Top">
             <TabItem Header="Boilers">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <StackPanel Margin="10">
-                                <Image Source="..\Assets\gasboiler.jpg" Width="200" Height="200"/>
-                                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                                <TextBlock Text="{Binding Boiler1.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Max Heat: "/>
-                                    <Run Text="{Binding Boiler1.MaxHeat}" />
-                                    <Run Text="MW"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Production Costs: "/>
-                                    <Run Text="{Binding Boiler1.ProductionCosts}" />
-                                    <Run Text="DKK/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="CO2 Emissions: "/>
-                                    <Run Text="{Binding Boiler1.CO2Emissions}" />
-                                    <Run Text="kg/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Gas Consumption: "/>
-                                    <Run Text="{Binding Boiler1.GasConsumption}" />
-                                    <Run Text="MWh(gas)/MWh(th)"/>
-                                </TextBlock>
-                            </StackPanel>
-
-                            <StackPanel Margin="10">
-                                <Image Source="..\Assets\oilboiler.jpg" Width="200" Height="200"/>
-                                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                                <TextBlock Text="{Binding Boiler2.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Max Heat: "/>
-                                    <Run Text="{Binding Boiler2.MaxHeat}" />
-                                    <Run Text="MW"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Production Costs: "/>
-                                    <Run Text="{Binding Boiler2.ProductionCosts}" />
-                                    <Run Text="DKK/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="CO2 Emissions: "/>
-                                    <Run Text="{Binding Boiler2.CO2Emissions}" />
-                                    <Run Text="kg/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Gas Consumption: "/>
-                                    <Run Text="{Binding Boiler2.GasConsumption}" />
-                                    <Run Text="MWh(oil)/MWh(th)"/>
-                                </TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <StackPanel Margin="10">
-                                <Image Source="..\Assets\gasmotor.jpg" Width="200" Height="200"/>
-                                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                                <TextBlock Text="{Binding Boiler3.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Max Heat: "/>
-                                    <Run Text="{Binding Boiler3.MaxHeat}" />
-                                    <Run Text="MW"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Production Costs: "/>
-                                    <Run Text="{Binding Boiler3.ProductionCosts}" />
-                                    <Run Text="DKK/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="CO2 Emissions: "/>
-                                    <Run Text="{Binding Boiler3.CO2Emissions}" />
-                                    <Run Text="kg/MWh(th)"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Gas Consumption: "/>
-                                    <Run Text="{Binding Boiler3.GasConsumption}" />
-                                    <Run Text="MWh(gas)/MWh(th)"/>
-                                </TextBlock>
-                            </StackPanel>
-
-                            <StackPanel Margin="10">
-                                <Image Source="..\Assets\electricboiler.jpg" Width="200" Height="200"/>
-                                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                                <TextBlock Text="{Binding Boiler4.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Max Heat: "/>
-                                    <Run Text="{Binding Boiler4.MaxHeat}" />
-                                    <Run Text="MW"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Max Electricity: "/>
-                                    <Run Text="{Binding Boiler4.MaxElectricity}" />
-                                    <Run Text="MW"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" Margin="0 5 0 0">
-                                    <Run Text="Production Costs: "/>
-                                    <Run Text="{Binding Boiler4.ProductionCosts}" />
-                                    <Run Text="DKK/MWh(th)          "/>
-                                </TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                </ScrollViewer>
+                <local:BoilersView DataContext="{Binding BoilersViewModel}" />
             </TabItem>
             <TabItem Header="Heating">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Winter Period:" FontWeight="Bold" Margin="10" Grid.Row="0" Grid.Column="0"/>
-                    <DataGrid ItemsSource="{Binding WinterData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Time From" Binding="{Binding TimeFrom, StringFormat='dd/MM/yyyy HH:mm'}" />
-                            <DataGridTextColumn Header="Time To" Binding="{Binding TimeTo, StringFormat='dd/MM/yyyy HH:mm'}" />
-                            <DataGridTextColumn Header="Heat Demand (kW)" Binding="{Binding HeatDemand}" />
-                            <DataGridTextColumn Header="Electricity Price" Binding="{Binding ElectricityPrice, StringFormat='C2'}" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <TextBlock Text="Summer Period:" FontWeight="Bold" Margin="10" Grid.Row="0" Grid.Column="1"/>
-                    <DataGrid ItemsSource="{Binding SummerData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1" IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Time From" Binding="{Binding TimeFrom, StringFormat='dd/MM/yyyy HH:mm'}" />
-                            <DataGridTextColumn Header="Time To" Binding="{Binding TimeTo, StringFormat='dd/MM/yyyy HH:mm'}" />
-                            <DataGridTextColumn Header="Heat Demand (kW)" Binding="{Binding HeatDemand}" />
-                            <DataGridTextColumn Header="Electricity Price" Binding="{Binding ElectricityPrice, StringFormat='C2'}" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
+                <local:HeatingView DataContext="{Binding HeatingViewModel}" />
             </TabItem>
             <TabItem Header="Optimization">
             </TabItem>
             <TabItem Header="Graphs">
             </TabItem>
             <TabItem Header="About" Margin="715 0 0 0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Grid.Row="0">
-                        <Image Source="..\Assets\sdu.png" Width="200" Height="200"/>
-                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                        <TextBlock Text="This is a 2nd Semester group project application, used for optimizing heating efficiency." FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-                        <TextBlock Text="OptiHeatS was developed by Group 17 SDU Software Engineering students:" FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-                        <TextBlock Text="Stefan Capatina" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-                        <TextBlock Text="Benediktas Bartkus" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-                        <TextBlock Text="Alex Florov" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-                        <TextBlock Text="Dovydas Gansauskas" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-                        <TextBlock Text="Simonas Tarasauskas" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Grid.Row="0" Margin ="20 0 0 0">
-                        <Image Source="..\Assets\danfoss.png" Width="200" Height="200"/>
-                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                        <TextBlock Text="All data used in our calculations was provided by Danfoss." FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-                        <TextBlock Text="Every image and logo used in this project belongs to the authors. (Danfoss, SDU)" FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-                    </StackPanel>
-                </Grid>
+                <local:AboutView DataContext="{Binding AboutViewModel}" />
             </TabItem>
         </TabControl>
     </DockPanel>

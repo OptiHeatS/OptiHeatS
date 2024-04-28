@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Globalization;
 
 namespace OptiHeatPro
@@ -31,9 +28,7 @@ namespace OptiHeatPro
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     var values = line.Split(';');
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                     StoreData(values);
                 }
@@ -51,9 +46,7 @@ namespace OptiHeatPro
                 HeatDemand = double.Parse(values[2].Replace(',', '.'), CultureInfo.InvariantCulture),
                 ElectricityPrice = double.Parse(values[3].Replace(',', '.'), CultureInfo.InvariantCulture)
             };
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             WinterData.Add(winterEntry);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         
             var summerEntry = new DataEntry
             {
@@ -62,28 +55,21 @@ namespace OptiHeatPro
                 HeatDemand = double.Parse(values[7].Replace(',', '.'), CultureInfo.InvariantCulture),
                 ElectricityPrice = double.Parse(values[8].Replace(',', '.'), CultureInfo.InvariantCulture)
             };
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             SummerData.Add(summerEntry);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         public void PrintData()
         {
             Console.WriteLine("Winter Data:");
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             foreach (var entry in WinterData)
             {
                 Console.WriteLine($"TimeFrom: {entry.TimeFrom}, TimeTo: {entry.TimeTo}, HeatDemand: {entry.HeatDemand}, ElectricityPrice: {entry.ElectricityPrice}");
             }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
             Console.WriteLine("Summer Data:");
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             foreach (var entry in SummerData)
             {
                 Console.WriteLine($"TimeFrom: {entry.TimeFrom}, TimeTo: {entry.TimeTo}, HeatDemand: {entry.HeatDemand}, ElectricityPrice: {entry.ElectricityPrice}");
             }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
     }
 }

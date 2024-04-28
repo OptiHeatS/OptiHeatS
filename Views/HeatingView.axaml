@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OptiHeatPro.ViewModels"
+             x:Class="OptiHeatPro.Views.HeatingView"
+             x:DataType="vm:HeatingViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Winter Period:" FontWeight="Bold" Margin="10" Grid.Row="0" Grid.Column="0"/>
+        <DataGrid ItemsSource="{Binding WinterData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Time From" Binding="{Binding TimeFrom, StringFormat='dd/MM/yyyy HH:mm'}" />
+                <DataGridTextColumn Header="Time To" Binding="{Binding TimeTo, StringFormat='dd/MM/yyyy HH:mm'}" />
+                <DataGridTextColumn Header="Heat Demand (kW)" Binding="{Binding HeatDemand}" />
+                <DataGridTextColumn Header="Electricity Price (DKK)" Binding="{Binding ElectricityPrice}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="Summer Period:" FontWeight="Bold" Margin="10" Grid.Row="0" Grid.Column="1"/>
+        <DataGrid ItemsSource="{Binding SummerData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Time From" Binding="{Binding TimeFrom, StringFormat='dd/MM/yyyy HH:mm'}" />
+                <DataGridTextColumn Header="Time To" Binding="{Binding TimeTo, StringFormat='dd/MM/yyyy HH:mm'}" />
+                <DataGridTextColumn Header="Heat Demand (kW)" Binding="{Binding HeatDemand}" />
+                <DataGridTextColumn Header="Electricity Price (DKK)" Binding="{Binding ElectricityPrice}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

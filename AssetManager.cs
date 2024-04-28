@@ -37,27 +37,4 @@ namespace OptiHeatPro
         ProductionCosts = productionCosts;
     }
   }
-
-  public class Print 
-  {
-    public static void DisplayBoilerInfo(Boiler boiler) 
-    {
-        Console.WriteLine("Name: " + boiler.Name);
-        Console.WriteLine("Max Heat: " + boiler.MaxHeat);
-        if (boiler.MaxElectricity != null) 
-        {
-            Console.WriteLine("Max Electricity: " + boiler.MaxElectricity);
-        }
-        Console.WriteLine("Production Costs: " + boiler.ProductionCosts);
-        if (boiler.CO2Emissions != 0) 
-        {
-            Console.WriteLine("CO2 Emissions: " + boiler.CO2Emissions);
-        }
-        if (boiler.GasConsumption != 0) 
-        {
-            Console.WriteLine("Gas Consumption: " + boiler.GasConsumption);
-        }
-        Console.WriteLine();
-    }
-  }
 }
