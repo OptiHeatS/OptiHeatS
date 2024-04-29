@@ -1,0 +1,25 @@
+<UserControl x:Class="OptiHeatPro.Views.GraphView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:vm="using:OptiHeatPro.ViewModels"
+             x:DataType="vm:GraphViewModel">
+  <TabControl TabStripPlacement="Bottom"> <!-- To be changed for something that looks nicer-->
+    <TabItem Header="Winter" Margin="525 0 0 10">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <lvc:CartesianChart Series="{Binding Winter}" LegendPosition="Right" ZoomMode="X"></lvc:CartesianChart>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Summer" Margin="0 0 0 10">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <lvc:CartesianChart Series="{Binding Summer}" LegendPosition="Right" ZoomMode="X"></lvc:CartesianChart>
+      </Grid>
+    </TabItem>
+  </TabControl>
+</UserControl>

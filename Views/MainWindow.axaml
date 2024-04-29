@@ -28,6 +28,7 @@
             <TabItem Header="Optimization">
             </TabItem>
             <TabItem Header="Graphs">
+                <local:GraphView DataContext="{Binding GraphViewModel}" />
             </TabItem>
             <TabItem Header="About" Margin="715 0 0 0">
                 <local:AboutView DataContext="{Binding AboutViewModel}" />

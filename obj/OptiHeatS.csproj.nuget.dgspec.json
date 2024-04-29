@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj": {}
+    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj": {
+    "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
         "projectName": "OptiHeatS",
-        "projectPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
-        "packagesPath": "C:\\Users\\Benediktas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Benediktas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -65,6 +77,14 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.0.10, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "LiveChartsCore.SkiaSharpView.Avalonia": {
+              "target": "Package",
+              "version": "[2.0.0-rc2, )"
             }
           },
           "imports": [
@@ -83,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
