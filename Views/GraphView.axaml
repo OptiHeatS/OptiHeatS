@@ -4,56 +4,46 @@
              xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
              xmlns:vm="using:OptiHeatPro.ViewModels"
              x:DataType="vm:GraphViewModel">
-  <!--<SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="90">
-    <SplitView.Pane>
-      <ListBox>
-        <ListBoxItem>Summer</ListBoxItem>
-      </ListBox>
-    </SplitView.Pane>
-    <SplitView.Content>
-        <TransitioningContentControl Content="{Binding CurrentPage}"/>
-    </SplitView.Content>
-  </SplitView>-->
   <TabControl TabStripPlacement="Left">
 
-    <TabItem Header="Winter" Background="LightGray">
-        <lvc:CartesianChart Series="{Binding Winter}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+    <TabItem Header="Winter OPT" Background="LightGray">
+        <lvc:CartesianChart Series="{Binding Winter}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"  XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
     </TabItem>
 
     <TabItem Header="Heat Demand" FontSize="20">
-        <lvc:CartesianChart Series="{Binding HeatDemand}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding WHeatDemand}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Production Costs" FontSize="20">
-        <lvc:CartesianChart Series="{Binding ProductionCosts}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding WProductionCosts}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding CYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Electricity Prices" FontSize="20">
-        <lvc:CartesianChart Series="{Binding ElectricityPrices}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding WElectricityPrices}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding ElYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Emissions" FontSize="20">
-        <lvc:CartesianChart Series="{Binding Emissions}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding WEmissions}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding EmYAxes}"></lvc:CartesianChart>
     </TabItem>
 
-    <TabItem Header="Summer" Background="LightGray">
-        <lvc:CartesianChart Series="{Binding Summer}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+    <TabItem Header="Summer OPT" Background="LightGray">
+        <lvc:CartesianChart Series="{Binding Summer}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding SXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
     </TabItem>
 
         <TabItem Header="Heat Demand" FontSize="20">
-        <lvc:CartesianChart Series="{Binding HeatDemand}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding SHeatDemand}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding SXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Production Costs" FontSize="20">
-        <lvc:CartesianChart Series="{Binding ProductionCosts}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding SProductionCosts}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding SXAxes}" YAxes="{Binding CYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Electricity Prices" FontSize="20">
-        <lvc:CartesianChart Series="{Binding ElectricityPrices}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding SElectricityPrices}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding SXAxes}" YAxes="{Binding ElYAxes}"></lvc:CartesianChart>
       </TabItem>
 
       <TabItem Header="Emissions" FontSize="20">
-        <lvc:CartesianChart Series="{Binding Emissions}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding SEmissions}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding SXAxes}" YAxes="{Binding EmYAxes}"></lvc:CartesianChart>
     </TabItem>
   </TabControl>
 </UserControl>
