@@ -57,19 +57,5 @@ namespace OptiHeatPro
             };
             SummerData.Add(summerEntry);
         }
-
-        public void PrintData()
-        {
-            Console.WriteLine("Winter Data:");
-            foreach (var entry in WinterData)
-            {
-                Console.WriteLine($"TimeFrom: {entry.TimeFrom}, TimeTo: {entry.TimeTo}, HeatDemand: {entry.HeatDemand}, ElectricityPrice: {entry.ElectricityPrice}");
-            }
-            Console.WriteLine("Summer Data:");
-            foreach (var entry in SummerData)
-            {
-                Console.WriteLine($"TimeFrom: {entry.TimeFrom}, TimeTo: {entry.TimeTo}, HeatDemand: {entry.HeatDemand}, ElectricityPrice: {entry.ElectricityPrice}");
-            }
-        }
     }
 }

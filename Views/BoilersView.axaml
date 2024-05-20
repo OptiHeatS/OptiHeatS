@@ -12,22 +12,22 @@
                     <TextBlock Text="{Binding Boiler1.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler1.MaxHeat}" />
+                        <Run Text="{Binding Boiler1.MaxHeat}" FontWeight="Bold"/>
                         <Run Text="MW"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler1.ProductionCosts}" />
+                        <Run Text="{Binding Boiler1.ProductionCosts}" FontWeight="Bold" />
                         <Run Text="DKK/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler1.CO2Emissions}" />
+                        <Run Text="{Binding Boiler1.CO2Emissions}" FontWeight="Bold" />
                         <Run Text="kg/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler1.GasConsumption}" />
+                        <Run Text="{Binding Boiler1.GasConsumption}" FontWeight="Bold"/>
                         <Run Text="MWh(gas)/MWh(th)"/>
                     </TextBlock>
                 </StackPanel>
@@ -38,22 +38,22 @@
                     <TextBlock Text="{Binding Boiler2.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler2.MaxHeat}" />
+                        <Run Text="{Binding Boiler2.MaxHeat}" FontWeight="Bold"/>
                         <Run Text="MW"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler2.ProductionCosts}" />
+                        <Run Text="{Binding Boiler2.ProductionCosts}" FontWeight="Bold"/>
                         <Run Text="DKK/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler2.CO2Emissions}" />
+                        <Run Text="{Binding Boiler2.CO2Emissions}" FontWeight="Bold"/>
                         <Run Text="kg/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler2.GasConsumption}" />
+                        <Run Text="{Binding Boiler2.GasConsumption}" FontWeight="Bold"/>
                         <Run Text="MWh(oil)/MWh(th)"/>
                     </TextBlock>
                 </StackPanel>
@@ -65,22 +65,22 @@
                     <TextBlock Text="{Binding Boiler3.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler3.MaxHeat}" />
+                        <Run Text="{Binding Boiler3.MaxHeat}" FontWeight="Bold"/>
                         <Run Text="MW"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler3.ProductionCosts}" />
+                        <Run Text="{Binding Boiler3.ProductionCosts}" FontWeight="Bold" />
                         <Run Text="DKK/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler3.CO2Emissions}" />
+                        <Run Text="{Binding Boiler3.CO2Emissions}" FontWeight="Bold" />
                         <Run Text="kg/MWh(th)"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler3.GasConsumption}" />
+                        <Run Text="{Binding Boiler3.GasConsumption}" FontWeight="Bold" />
                         <Run Text="MWh(gas)/MWh(th)"/>
                     </TextBlock>
                 </StackPanel>
@@ -91,17 +91,17 @@
                     <TextBlock Text="{Binding Boiler4.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler4.MaxHeat}" />
+                        <Run Text="{Binding Boiler4.MaxHeat}" FontWeight="Bold"/>
                         <Run Text="MW"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Max Electricity: "/>
-                        <Run Text="{Binding Boiler4.MaxElectricity}" />
+                        <Run Text="{Binding Boiler4.MaxElectricity}" FontWeight="Bold"/>
                         <Run Text="MW"/>
                     </TextBlock>
                     <TextBlock FontSize="18" Margin="0 5 0 0">
                         <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler4.ProductionCosts}" />
+                        <Run Text="{Binding Boiler4.ProductionCosts}" FontWeight="Bold"/>
                         <Run Text="DKK/MWh(th)          "/>
                     </TextBlock>
                 </StackPanel>

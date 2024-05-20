@@ -50,6 +50,7 @@
                 <local:HeatingView DataContext="{Binding HeatingViewModel}" />
             </TabItem>
             <TabItem Header="Optimization">
+                <local:OptimizerView DataContext="{Binding OptimizerViewModel}" />
             </TabItem>
             <TabItem Header="Summer Graphs">
                 <local:SummerGraphView DataContext="{Binding GraphViewModel}" />
@@ -57,7 +58,7 @@
             <TabItem Header="Winter Graphs">
                 <local:WinterGraphView DataContext="{Binding GraphViewModel}" />
             </TabItem>
-            <TabItem Header="About" Margin="450 0 0 0">
+            <TabItem Header="About">
                 <local:AboutView DataContext="{Binding AboutViewModel}" />
             </TabItem>
         </TabControl>
