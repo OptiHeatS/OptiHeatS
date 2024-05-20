@@ -19,6 +19,7 @@ namespace OptiHeatPro.ViewModels
     {
         private HeatingData _heatingData;
         
+        // Each graph needs its own list
         private static List<decimal> SElectricityPrice = new List<decimal>{};
         private static List<double> SHeatDemand = new List<double>{};
         private static List<string> SDnT = new List<string> {};
@@ -130,6 +131,7 @@ namespace OptiHeatPro.ViewModels
                 Values = SElectricityPrice,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -140,6 +142,7 @@ namespace OptiHeatPro.ViewModels
                 Values = STotalElectricityProduction,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -165,6 +168,7 @@ namespace OptiHeatPro.ViewModels
                 Values = SHeatDemand,
                 Fill = new SolidColorPaint(SKColors.DarkRed),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -175,6 +179,7 @@ namespace OptiHeatPro.ViewModels
                 Values = STotalProductionCost,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -185,6 +190,7 @@ namespace OptiHeatPro.ViewModels
                 Values = STotalCO2Emissions,
                 Fill = new SolidColorPaint(SKColors.SlateGray),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -223,6 +229,7 @@ namespace OptiHeatPro.ViewModels
                 Values = WElectricityPrice,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -233,6 +240,7 @@ namespace OptiHeatPro.ViewModels
                 Values = WTotalElectricityProduction,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -258,6 +266,7 @@ namespace OptiHeatPro.ViewModels
                 Values = WHeatDemand,
                 Fill = new SolidColorPaint(SKColors.DarkRed),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -268,6 +277,7 @@ namespace OptiHeatPro.ViewModels
                 Values = WTotalProductionCost,
                 Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
@@ -278,6 +288,7 @@ namespace OptiHeatPro.ViewModels
                 Values = WTotalCO2Emissions,
                 Fill = new SolidColorPaint(SKColors.SlateGray),
                 GeometrySize = 0,
+                GeometryFill = null,
                 GeometryStroke = null
             }
         };
