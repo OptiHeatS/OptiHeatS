@@ -18,8 +18,8 @@ namespace OptiHeatPro.ViewModels
         private static readonly SKColor BrightRed = new(226,0,15);
         //public Axis[] XAxes = new Axis[];
         private HeatingData _heatingData;
-        private static List<double> Elps = new List<double> {};
-        private static List<double> Elpw = new List<double> {};
+        private static List<decimal> Elps = new List<decimal> {};
+        private static List<decimal> Elpw = new List<decimal> {};
         private static List<double> Hds = new List<double> {};
         private static List<double> Hdw = new List<double> {};
         private static List<string> DnTs = new List<string> {};
@@ -66,7 +66,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] WElectricityPrices { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<decimal>
             {
                 Values = Elpw,
                 Fill = new SolidColorPaint(SKColors.LimeGreen),
@@ -129,7 +129,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SElectricityPrices { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<decimal>
             {
                 Values = Elps,
                 Fill = new SolidColorPaint(SKColors.LimeGreen),

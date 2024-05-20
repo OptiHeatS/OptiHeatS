@@ -7,7 +7,7 @@ namespace OptiHeatPro
         public DateTime TimeFrom { get; set; }
         public DateTime TimeTo { get; set; }
         public double HeatDemand { get; set; }
-        public double ElectricityPrice { get; set; }
+        public decimal ElectricityPrice { get; set; }
     }
 
     public class HeatingData
@@ -44,7 +44,7 @@ namespace OptiHeatPro
                 TimeFrom = DateTime.ParseExact(values[0], format, CultureInfo.InvariantCulture),
                 TimeTo = DateTime.ParseExact(values[1], format, CultureInfo.InvariantCulture),
                 HeatDemand = double.Parse(values[2].Replace(',', '.'), CultureInfo.InvariantCulture),
-                ElectricityPrice = double.Parse(values[3].Replace(',', '.'), CultureInfo.InvariantCulture)
+                ElectricityPrice = decimal.Parse(values[3].Replace(',', '.'), CultureInfo.InvariantCulture)
             };
             WinterData.Add(winterEntry);
         
@@ -53,7 +53,7 @@ namespace OptiHeatPro
                 TimeFrom = DateTime.ParseExact(values[5], format, CultureInfo.InvariantCulture),
                 TimeTo = DateTime.ParseExact(values[6], format, CultureInfo.InvariantCulture),
                 HeatDemand = double.Parse(values[7].Replace(',', '.'), CultureInfo.InvariantCulture),
-                ElectricityPrice = double.Parse(values[8].Replace(',', '.'), CultureInfo.InvariantCulture)
+                ElectricityPrice = decimal.Parse(values[8].Replace(',', '.'), CultureInfo.InvariantCulture)
             };
             SummerData.Add(summerEntry);
         }
