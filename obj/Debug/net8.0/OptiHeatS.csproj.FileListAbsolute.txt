@@ -721,3 +721,8 @@ C:\Users\PC\Desktop\Semester project\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.d
 C:\Users\PC\Desktop\Semester project\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.dll
 C:\Users\PC\Desktop\Semester project\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
 C:\Users\PC\Desktop\Semester project\OptiHeatS\bin\Debug\net8.0\SkiaSharp.HarfBuzz.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\CommunityToolkit.Mvvm.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\SkiaSharp.HarfBuzz.dll
