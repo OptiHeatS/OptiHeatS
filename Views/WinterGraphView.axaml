@@ -1,0 +1,37 @@
+<UserControl x:Class="OptiHeatPro.Views.WinterGraphView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:vm="using:OptiHeatPro.ViewModels"
+             x:DataType="vm:GraphViewModel">
+  <TabControl TabStripPlacement="Left">
+
+    <TabItem Header="Optimization" Background="LightGray">
+        <lvc:CartesianChart Series="{Binding Winter}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}"  XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
+    </TabItem>
+
+    <TabItem Header="Heat Demand" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterHeatDemand}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
+      </TabItem>
+
+      <TabItem Header="Production Costs" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterProductionCosts}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding CYAxes}"></lvc:CartesianChart>
+      </TabItem>
+
+      <TabItem Header="Electricity Prices" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterElectricityPrices}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding ElYAxes}"></lvc:CartesianChart>
+      </TabItem>
+
+      <TabItem Header="Electricity Production" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterElectricityProduction}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
+      </TabItem>
+
+      <TabItem Header="Consumption" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterConsumption}" LegendPosition="Right" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
+      </TabItem>
+
+      <TabItem Header="Emissions" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterEmissions}" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding EmYAxes}"></lvc:CartesianChart>
+    </TabItem>
+  </TabControl>
+</UserControl>

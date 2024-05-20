@@ -51,10 +51,13 @@
             </TabItem>
             <TabItem Header="Optimization">
             </TabItem>
-            <TabItem Header="Graphs">
-                <local:GraphView DataContext="{Binding GraphViewModel}" />
+            <TabItem Header="Summer Graphs">
+                <local:SummerGraphView DataContext="{Binding GraphViewModel}" />
             </TabItem>
-            <TabItem Header="About" Margin="715 0 0 0">
+            <TabItem Header="Winter Graphs">
+                <local:WinterGraphView DataContext="{Binding GraphViewModel}" />
+            </TabItem>
+            <TabItem Header="About" Margin="450 0 0 0">
                 <local:AboutView DataContext="{Binding AboutViewModel}" />
             </TabItem>
         </TabControl>

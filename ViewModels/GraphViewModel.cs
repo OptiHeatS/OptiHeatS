@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Windows.Markup;
-//using System.Globalization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
@@ -10,169 +9,285 @@ using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
 using System.Collections.ObjectModel;
 using ReactiveUI;
+using System.Dynamic;
+using OptiHeatPro.Views;
+using System.Security.Cryptography.X509Certificates;
 
 namespace OptiHeatPro.ViewModels
 {
     public partial class GraphViewModel : ObservableObject
     {
-        private static readonly SKColor BrightRed = new(226,0,15);
-        //public Axis[] XAxes = new Axis[];
         private HeatingData _heatingData;
-        private static List<decimal> Elps = new List<decimal> {};
-        private static List<decimal> Elpw = new List<decimal> {};
-        private static List<double> Hds = new List<double> {};
-        private static List<double> Hdw = new List<double> {};
-        private static List<string> DnTs = new List<string> {};
-        private static List<string> DnTw = new List<string> {};
-        private static List<double> FakeData = new List<double> {}; //temp
+        
+        private static List<decimal> SElectricityPrice = new List<decimal>{};
+        private static List<double> SHeatDemand = new List<double>{};
+        private static List<string> SDnT = new List<string> {};
+        private static List<double> SGasBoilerOutput = new List<double> {};
+        private static List<double> SOilBoilerOutput = new List<double> {};
+
+        private static List<double> SGasMotorOutput = new List<double> {};
+        private static List<double> SElectricBoilerOutput = new List<double> {};
+        private static List<double> STotalElectricityProduction = new List<double> {};
+        private static List<decimal> STotalProductionCost = new List<decimal> {};
+        private static List<double> STotalGasConsumption = new List<double> {};
+        private static List<double> STotalOilConsumption = new List<double> {};
+        private static List<double> STotalCO2Emissions = new List<double> {};
+
+        private static List<decimal> WElectricityPrice = new List<decimal>{};
+        private static List<double> WHeatDemand = new List<double>{};
+        private static List<string> WDnT = new List<string> {};
+        private static List<double> WGasBoilerOutput = new List<double> {};
+        private static List<double> WOilBoilerOutput = new List<double> {};
+
+        private static List<double> WGasMotorOutput = new List<double> {};
+        private static List<double> WElectricBoilerOutput = new List<double> {};
+        private static List<double> WTotalElectricityProduction = new List<double> {};
+        private static List<decimal> WTotalProductionCost = new List<decimal> {};
+        private static List<double> WTotalGasConsumption = new List<double> {};
+        private static List<double> WTotalOilConsumption = new List<double> {};
+        private static List<double> WTotalCO2Emissions = new List<double> {};
+        
         public GraphViewModel(){
             _heatingData = new HeatingData();
             _heatingData.Read();
-            foreach(var entry in _heatingData.SummerData) // the only way I could manage to extracy the values bbd..
+            Optimizer optimizer = new Optimizer();
+            List<Result> Results = optimizer.Optimize(_heatingData.SummerData);
+            
+            foreach(var entry in _heatingData.SummerData)
             {
-                Elps.Add(entry.ElectricityPrice);
-                Hds.Add(entry.HeatDemand);
-                DnTs.Add(Convert.ToString(entry.TimeFrom));
-                FakeData.Add(1);
+                
+                SElectricityPrice.Add(entry.ElectricityPrice);
+                SHeatDemand.Add(entry.HeatDemand);
+                SDnT.Add(Convert.ToString(entry.TimeFrom));
             }
+            foreach (var entry in Results)
+            {
+                SGasBoilerOutput.Add(entry.GasBoilerOutput);
+                SOilBoilerOutput.Add(entry.OilBoilerOutput);
+                SGasMotorOutput.Add(entry.GasMotorOutput);
+                SElectricBoilerOutput.Add(entry.ElectricBoilerOutput);
+                STotalElectricityProduction.Add(entry.TotalElectricityProduction);
+                STotalProductionCost.Add(entry.TotalProductionCost);
+                STotalGasConsumption.Add(entry.TotalGasConsumption);
+                STotalOilConsumption.Add(entry.TotalOilConsumption);
+                STotalCO2Emissions.Add(entry.TotalCO2Emissions);
+            }
+
+            Results = optimizer.Optimize(_heatingData.WinterData);
+
             foreach(var entry in _heatingData.WinterData)
             {
-                Elpw.Add(entry.ElectricityPrice);
-                Hdw.Add(entry.HeatDemand);
-                DnTw.Add(Convert.ToString(entry.TimeFrom));
+                
+                WElectricityPrice.Add(entry.ElectricityPrice);
+                WHeatDemand.Add(entry.HeatDemand);
+                WDnT.Add(Convert.ToString(entry.TimeFrom));
+            }
+            foreach (var entry in Results)
+            {
+                WGasBoilerOutput.Add(entry.GasBoilerOutput);
+                WOilBoilerOutput.Add(entry.OilBoilerOutput);
+                WGasMotorOutput.Add(entry.GasMotorOutput);
+                WElectricBoilerOutput.Add(entry.ElectricBoilerOutput);
+                WTotalElectricityProduction.Add(entry.TotalElectricityProduction);
+                WTotalProductionCost.Add(entry.TotalProductionCost);
+                WTotalGasConsumption.Add(entry.TotalGasConsumption);
+                WTotalOilConsumption.Add(entry.TotalOilConsumption);
+                WTotalCO2Emissions.Add(entry.TotalCO2Emissions);
             }
         }
-        
-        public ISeries[] Winter { get; set; } =
-        {
-            new StackedAreaSeries<double>
-            {
-                Name = "Boiler A",
-                Fill = new SolidColorPaint(SKColors.Red),
-                Values = FakeData
-            },
-            new StackedAreaSeries<double>
-            {
-                Name = "Boiler B",
-                Fill = new SolidColorPaint(SKColors.Green),
-                Values = FakeData
-            },
-            new StackedAreaSeries<double>
-            {
-                Name = "Boiler C",
-                Fill = new SolidColorPaint(SKColors.Yellow),
-                Values = FakeData
-            }
-        };
-        public ISeries[] WElectricityPrices { get; set; } =
-        {
-            new StepLineSeries<decimal>
-            {
-                Values = Elpw,
-                Fill = new SolidColorPaint(SKColors.LimeGreen),
-                GeometrySize = 0,
-                GeometryStroke = null
-            }
-        };
-        public ISeries[] WHeatDemand { get; set; } =
-        {
-            new StepLineSeries<double>
-            {
-                Values = Hdw,
-                Fill = new SolidColorPaint(SKColors.OrangeRed),
-                GeometrySize = 0,
-                GeometryStroke = null
-            }
-        };
-        public ISeries[] WProductionCosts { get; set; } =
-        {
-            new StepLineSeries<double>
-            {
-                Values = FakeData,
-                Fill = new SolidColorPaint(SKColors.LimeGreen),
-                GeometrySize = 0,
-                GeometryStroke = null
-            }
-        };
-        public ISeries[] WEmissions { get; set; } =
-        {
-            new StepLineSeries<double>
-            {
-                Values = FakeData,
-                Fill = new SolidColorPaint(SKColors.SlateGray),
-                GeometrySize = 0,
-                GeometryStroke = null
-            }
-        };
-
 
         public ISeries[] Summer { get; set; } =
         {
-            new StackedAreaSeries<double>
+            new StackedStepAreaSeries<double>
             {
-                Name = "Boiler A",
-                Fill = new SolidColorPaint(SKColors.Red),
-                Values = FakeData
+                Name = "Gas Boiler",
+                //Fill = new SolidColorPaint(SKColors.Red),
+                Values = SGasBoilerOutput
             },
-            new StackedAreaSeries<double>
+            new StackedStepAreaSeries<double>
             {
-                Name = "Boiler A",
-                Fill = new SolidColorPaint(SKColors.Green),
-                Values = FakeData
+                Name = "Oil Boiler",
+                //Fill = new SolidColorPaint(SKColors.Green),
+                Values = SOilBoilerOutput
             },
-            new StackedAreaSeries<double>
+            new StackedStepAreaSeries<double>
             {
-                Name = "Boiler C",
-                Fill = new SolidColorPaint(SKColors.Yellow),
-                Values = FakeData
+                Name = "Gas Motor",
+                //Fill = new SolidColorPaint(SKColors.Yellow),
+                Values = SGasMotorOutput
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Electric Boiler",
+                //Fill = new SolidColorPaint(SKColors.Yellow),
+                Values = SElectricBoilerOutput
             }
         };
-        public ISeries[] SElectricityPrices { get; set; } =
+        public ISeries[] SummerElectricityPrices { get; set; } =
         {
             new StepLineSeries<decimal>
             {
-                Values = Elps,
-                Fill = new SolidColorPaint(SKColors.LimeGreen),
+                Values = SElectricityPrice,
+                Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
                 GeometryStroke = null
             }
         };
-        public ISeries[] SHeatDemand { get; set; } =
+         public ISeries[] SummerElectricityProduction { get; set; } =
         {
             new StepLineSeries<double>
             {
-                Values = Hds,
-                Fill = new SolidColorPaint(SKColors.OrangeRed),
+                Values = STotalElectricityProduction,
+                Fill = new SolidColorPaint(SKColors.Green),
                 GeometrySize = 0,
                 GeometryStroke = null
             }
         };
-        public ISeries[] SProductionCosts { get; set; } =
+        public ISeries[] SummerConsumption { get; set; } =
+        {
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Gas",
+                //Fill = new SolidColorPaint(SKColors.Red),
+                Values = STotalGasConsumption
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Oil",
+                //Fill = new SolidColorPaint(SKColors.Green),
+                Values = STotalOilConsumption
+            }
+        };
+        public ISeries[] SummerHeatDemand { get; set; } =
         {
             new StepLineSeries<double>
             {
-                Values = FakeData,
-                Fill = new SolidColorPaint(SKColors.LimeGreen),
+                Values = SHeatDemand,
+                Fill = new SolidColorPaint(SKColors.DarkRed),
                 GeometrySize = 0,
                 GeometryStroke = null
             }
         };
-        public ISeries[] SEmissions { get; set; } =
+        public ISeries[] SummerProductionCosts { get; set; } =
+        {
+            new StepLineSeries<decimal>
+            {
+                Values = STotalProductionCost,
+                Fill = new SolidColorPaint(SKColors.Green),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+        public ISeries[] SummerEmissions { get; set; } =
         {
             new StepLineSeries<double>
             {
-                Values = FakeData,
+                Values = STotalCO2Emissions,
                 Fill = new SolidColorPaint(SKColors.SlateGray),
                 GeometrySize = 0,
                 GeometryStroke = null
             }
         };
+
+                public ISeries[] Winter { get; set; } =
+        {
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Gas Motor",
+                //Fill = new SolidColorPaint(SKColors.Yellow),
+                Values = WGasMotorOutput
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Gas Boiler",
+                //Fill = new SolidColorPaint(SKColors.Red),
+                Values = WGasBoilerOutput
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Oil Boiler",
+                //Fill = new SolidColorPaint(SKColors.Green),
+                Values = WOilBoilerOutput
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Electric Boiler",
+                //Fill = new SolidColorPaint(SKColors.Yellow),
+                Values = WElectricBoilerOutput
+            }
+        };
+        public ISeries[] WinterElectricityPrices { get; set; } =
+        {
+            new StepLineSeries<decimal>
+            {
+                Values = WElectricityPrice,
+                Fill = new SolidColorPaint(SKColors.Green),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+         public ISeries[] WinterElectricityProduction { get; set; } =
+        {
+            new StepLineSeries<double>
+            {
+                Values = WTotalElectricityProduction,
+                Fill = new SolidColorPaint(SKColors.Green),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+        public ISeries[] WinterConsumption { get; set; } =
+        {
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Gas",
+                //Fill = new SolidColorPaint(SKColors.Red),
+                Values = WTotalGasConsumption
+            },
+            new StackedStepAreaSeries<double>
+            {
+                Name = "Oil",
+                //Fill = new SolidColorPaint(SKColors.Green),
+                Values = WTotalOilConsumption
+            }
+        };
+        public ISeries[] WinterHeatDemand { get; set; } =
+        {
+            new StepLineSeries<double>
+            {
+                Values = WHeatDemand,
+                Fill = new SolidColorPaint(SKColors.DarkRed),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+        public ISeries[] WinterProductionCosts { get; set; } =
+        {
+            new StepLineSeries<decimal>
+            {
+                Values = WTotalProductionCost,
+                Fill = new SolidColorPaint(SKColors.Green),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+        public ISeries[] WinterEmissions { get; set; } =
+        {
+            new StepLineSeries<double>
+            {
+                Values = WTotalCO2Emissions,
+                Fill = new SolidColorPaint(SKColors.SlateGray),
+                GeometrySize = 0,
+                GeometryStroke = null
+            }
+        };
+
         public Axis[] WXAxes { get; set; }
             = new Axis[]
             {
                 new Axis
                 {
-                    Labels = DnTw
+                    Labels = WDnT
                 }
             };
         public Axis[] SXAxes { get; set; }
@@ -180,7 +295,7 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Labels = DnTs
+                    Labels = SDnT
                 }
             };
         public Axis[] ElYAxes { get; set; }
@@ -188,7 +303,7 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Name = "DKK / MWh(el)",
+                    //Name = "DKK / MWh",
                     Labeler = (value) => Math.Round(value,2) + " DKK/MWh"
                 }
             };
@@ -197,8 +312,8 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Name = "MWh",
-                    Labeler = (value) => Math.Round(value,2) + " MWh"
+                    //Name = "MW",
+                    Labeler = (value) => Math.Round(value,2) + " MW"
                 }
             };
         public Axis[] CYAxes { get; set; }
@@ -206,8 +321,8 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Name = "DKK / MWh(th)",
-                    Labeler = (value) => Math.Round(value,2) + " DKK/MWh"
+                    //Name = "DKK",
+                    Labeler = (value) => Math.Round(value,2) + " DKK"
                 }
             };
         public Axis[] EmYAxes { get; set; }
@@ -215,8 +330,8 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Name = "kg / MWh(th)",
-                    Labeler = (value) => Math.Round(value,2) + " kg/MWh"
+                    //Name = "kg",
+                    Labeler = (value) => Math.Round(value,2) + " kg"
                 }
             };
         public DrawMarginFrame DrawMarginFrame => new DrawMarginFrame

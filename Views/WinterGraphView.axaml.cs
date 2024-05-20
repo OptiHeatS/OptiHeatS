@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace OptiHeatPro.Views
 {
-    public partial class GraphView : UserControl
+    public partial class WinterGraphView : UserControl
     {
-        public GraphView()
+        public WinterGraphView()
         {
             InitializeComponent();
         }
