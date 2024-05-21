@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+
 namespace OptiHeatPro
 {
     // Main class to run the application
@@ -6,40 +7,35 @@ namespace OptiHeatPro
     {
         public static void Main(string[] args)
         {
-            HeatingData heatingData = new HeatingData();
-            Optimizer optimizer = new Optimizer();
-            ResultDataManager resultDataManager = new ResultDataManager();
+            var heatingData = new HeatingData();
+            var optimizer = new Optimizer();
+            var resultDataManager = new ResultDataManager();
 
+            // Read heating data
             heatingData.Read();
 
-            // Choose file path for Winter results
-            string filePath = "WinterResults.csv";
+            // Optimize and write Winter results
+            WriteResults(heatingData.WinterData, "Data/WinterResults.csv", optimizer, resultDataManager);
 
-            // Winter results
-            List<Result> results = optimizer.Optimize(heatingData.WinterData);
+            // Optimize and write Summer results
+            WriteResults(heatingData.SummerData, "Data/SummerResults.csv", optimizer, resultDataManager);
 
-            // Write results to CSV file
-            resultDataManager.WriteResultsToCSV(results, filePath);
-
-            // Choose file path for summer results
-            filePath = "SummerResults.csv";
-
-            // Summer results
-            results = optimizer.Optimize(heatingData.SummerData);
-
-            // Write results to CSV file
-            resultDataManager.WriteResultsToCSV(results, filePath);
-
-
-             //Initialize UI
-             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+            // Initialize UI
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
-        //Method to configure Avalonia
+
+        // Method to configure Avalonia
         public static AppBuilder BuildAvaloniaApp()
         {
             return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace();
+        }
+
+        private static void WriteResults(List<DataEntry> data, string filePath, Optimizer optimizer, ResultDataManager resultDataManager)
+        {
+            var results = optimizer.Optimize(data);
+            resultDataManager.WriteResultsToCSV(results, filePath);
         }
     }
 }

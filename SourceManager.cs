@@ -20,7 +20,7 @@ namespace OptiHeatPro
             WinterData = new List<DataEntry>();
             SummerData = new List<DataEntry>();
 
-            using (var reader = new StreamReader(@"datacsv.csv"))
+            using (var reader = new StreamReader(@"Data/SourceManagerData.csv"))
             {
                 reader.ReadLine(); // Skip header
                 reader.ReadLine(); // Skip sub-header
