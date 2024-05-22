@@ -37,7 +37,7 @@ namespace OptiHeatPro
                         }
                         if (boiler.MaxElectricity > 0)
                         {
-                            boiler.ProductionCosts -= heatingData[i].ElectricityPrice;
+                            boiler.ProductionCosts -= heatingData[i].ElectricityPrice*(decimal)boiler.MaxElectricity/(decimal)boiler.MaxHeat; // gas motor makes 0.75MW of electricity for a MW of heat (assuming electricity production is linear)
                         }        
                     }
                 }
@@ -82,7 +82,7 @@ namespace OptiHeatPro
                     else if (boiler.Name == "GM")
                     {
                         electricityRatio = boiler.MaxElectricity.Value / boiler.MaxHeat;
-                        boilerCost = (decimal)allocatedHeat * (decimal)electricityRatio * boiler.ProductionCosts;
+                        boilerCost = (decimal)allocatedHeat * boiler.ProductionCosts;
                         totalElectricityProduction += electricityRatio * allocatedHeat;
                         gasMotorOutput += allocatedHeat;
                         totalGasConsumption += boiler.GasConsumption * allocatedHeat;
