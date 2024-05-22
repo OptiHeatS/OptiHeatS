@@ -26,12 +26,12 @@
             <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                 <Run Text="Total Gas Consumption: " />
                 <Run Text="{Binding WTotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" m3" />
+                <Run Text=" MW" />
             </TextBlock>
             <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                 <Run Text="Total Oil Consumption: " />
                 <Run Text="{Binding WTotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold"/>
-                <Run Text=" m3" />
+                <Run Text=" MW" />
             </TextBlock>
             <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                 <Run Text="Total CO2 Emissions: " />
@@ -57,12 +57,12 @@
     <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
         <Run Text="Total Gas Consumption: " />
         <Run Text="{Binding STotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-        <Run Text=" m3" />
+        <Run Text=" MW" />
     </TextBlock>
     <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
         <Run Text="Total Oil Consumption: " />
         <Run Text="{Binding STotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-        <Run Text=" m3" />
+        <Run Text=" MW" />
     </TextBlock>
     <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                 <Run Text="Total CO2 Emissions: " />
