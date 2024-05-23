@@ -142,6 +142,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryFill = new SolidColorPaint(SKColors.LightGreen),
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
+
             },
             new StepLineSeries<double>
             {
@@ -164,7 +165,8 @@ namespace OptiHeatPro.ViewModels
                 Values = SElectricityPrice,
                 GeometrySize = 0,
                 LineSmoothness = 1,
-                ScalesYAt = 1
+                ScalesYAt = 1,
+                ZIndex = 1000
             }
         };
         public ISeries[] SummerElectricityPrices { get; set; } =
@@ -322,7 +324,8 @@ namespace OptiHeatPro.ViewModels
                 Values = WElectricityPrice,
                 GeometrySize = 0,
                 LineSmoothness = 1,
-                ScalesYAt = 1
+                ScalesYAt = 1,
+                ZIndex = 1000
             }
         };
         public ISeries[] WinterElectricityPrices { get; set; } =
