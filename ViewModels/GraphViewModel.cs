@@ -102,29 +102,45 @@ namespace OptiHeatPro.ViewModels
             new StackedStepAreaSeries<double>
             {
                 Name = "Gas Boiler",
-                Fill = new SolidColorPaint(SKColors.Red.WithAlpha(100)),
+                Fill = new SolidColorPaint(SKColors.Yellow.WithAlpha(80)),
                 Values = SGasBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.BurlyWood),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Oil Boiler",
-                Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(100)),
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(100)),
                 Values = SOilBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Brown),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Gas Motor",
-                Fill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(150)),
+                Fill = new SolidColorPaint(SKColors.CadetBlue.WithAlpha(200)),
                 Values = SGasMotorOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.CadetBlue),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Electric Boiler",
-                Fill = new SolidColorPaint(SKColors.CadetBlue.WithAlpha(200)),
+                Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 Values = SElectricBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.LightGreen),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StepLineSeries<double>
@@ -158,10 +174,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Electricity Price",
                 Values = SElectricityPrice,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
             }
         };
          public ISeries[] SummerElectricityProduction { get; set; } =
@@ -171,10 +187,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Produced Electricity",
                 Values = STotalElectricityProduction,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
             }
         };
         public ISeries[] SummerConsumption { get; set; } =
@@ -183,13 +199,21 @@ namespace OptiHeatPro.ViewModels
             {
                 Name = "Gas",
                 Fill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(150)),
-                Values = STotalGasConsumption
+                Values = STotalGasConsumption,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(100)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Oil",
-                Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(100)),
-                Values = STotalOilConsumption
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(100)),
+                Values = STotalOilConsumption,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Brown.WithAlpha(200)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] SummerHeatDemand { get; set; } =
@@ -198,11 +222,11 @@ namespace OptiHeatPro.ViewModels
             {
                 Name = "Heat Demand",
                 Values = SHeatDemand,
-                Fill = new SolidColorPaint(SKColors.Red.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Red.WithAlpha(150)),
+                Fill = new SolidColorPaint(SKColors.DarkRed.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.DarkRed.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] SummerProductionCosts { get; set; } =
@@ -212,10 +236,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Production Cost",
                 Values = STotalProductionCost,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] SummerEmissions { get; set; } =
@@ -225,10 +249,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "CO2 Emissions",
                 Values = STotalCO2Emissions,
                 Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(200)),
-                Stroke = new SolidColorPaint(SKColors.SlateGray.WithAlpha(200)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] Winter { get; set; } =
@@ -236,29 +260,45 @@ namespace OptiHeatPro.ViewModels
             new StackedStepAreaSeries<double>
             {
                 Name = "Gas Boiler",
-                Fill = new SolidColorPaint(SKColors.Red.WithAlpha(100)),
+                Fill = new SolidColorPaint(SKColors.Yellow.WithAlpha(80)),
                 Values = WGasBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.BurlyWood),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Oil Boiler",
-                Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(100)),
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(100)),
                 Values = WOilBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Brown),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Gas Motor",
-                Fill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(150)),
+                Fill = new SolidColorPaint(SKColors.CadetBlue.WithAlpha(200)),
                 Values = WGasMotorOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.CadetBlue),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Electric Boiler",
-                Fill = new SolidColorPaint(SKColors.CadetBlue.WithAlpha(200)),
+                Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 Values = WElectricBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.LightGreen),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
             new StepLineSeries<double>
@@ -292,10 +332,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Electricity Price",
                 Values = WElectricityPrice,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
          public ISeries[] WinterElectricityProduction { get; set; } =
@@ -305,10 +345,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Produced Electricity",
                 Values = WTotalElectricityProduction,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] WinterConsumption { get; set; } =
@@ -317,13 +357,21 @@ namespace OptiHeatPro.ViewModels
             {
                 Name = "Gas",
                 Fill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(150)),
-                Values = WTotalGasConsumption
+                Values = WTotalGasConsumption,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.YellowGreen.WithAlpha(100)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             },
             new StackedStepAreaSeries<double>
             {
                 Name = "Oil",
-                Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(100)),
-                Values = WTotalOilConsumption
+                Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(100)),
+                Values = WTotalOilConsumption,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Brown.WithAlpha(200)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] WinterHeatDemand { get; set; } =
@@ -332,11 +380,11 @@ namespace OptiHeatPro.ViewModels
             {
                 Name = "Heat Demand",
                 Values = WHeatDemand,
-                Fill = new SolidColorPaint(SKColors.Red.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Red.WithAlpha(150)),
+                Fill = new SolidColorPaint(SKColors.DarkRed.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.DarkRed.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] WinterProductionCosts { get; set; } =
@@ -346,10 +394,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "Production Cost",
                 Values = WTotalProductionCost,
                 Fill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
-                Stroke = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.Green.WithAlpha(150)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
         public ISeries[] WinterEmissions { get; set; } =
@@ -359,10 +407,10 @@ namespace OptiHeatPro.ViewModels
                 Name = "CO2 Emissions",
                 Values = WTotalCO2Emissions,
                 Fill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(200)),
-                Stroke = new SolidColorPaint(SKColors.SlateGray.WithAlpha(200)),
                 GeometrySize = 0,
-                GeometryFill = null,
-                GeometryStroke = null
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(SKColors.SlateGray.WithAlpha(200)),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             }
         };
 
