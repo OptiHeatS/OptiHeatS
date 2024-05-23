@@ -13,7 +13,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OptiHeatS
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\simon\Desktop\C#\semester project\OptiHeatS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -40,32 +39,4 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/WinterGraphView.axaml]
-=======
-build_property.ProjectDir = C:\Users\Benediktas\Desktop\OptiHeatS\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/App.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/AboutView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/BoilersView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/HeatingView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/MainWindow.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/OptimizerView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/SummerGraphView.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[C:/Users/Benediktas/Desktop/OptiHeatS/Views/WinterGraphView.axaml]
->>>>>>> 246f6536c4eb090028fdbb0de52cb833033bf131
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

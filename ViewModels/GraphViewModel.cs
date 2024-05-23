@@ -110,7 +110,7 @@ namespace OptiHeatPro.ViewModels
         {
             new StackedStepAreaSeries<double>
             {
-                Name = "Gas Motor",
+                Name = "GM",
                 Fill = new SolidColorPaint(GMC),
                 Values = SGasMotorOutput,
                 GeometrySize = 0,
@@ -121,7 +121,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Electric Boiler",
+                Name = "EK",
                 Fill = new SolidColorPaint(EBC),
                 Values = SElectricBoilerOutput,
                 GeometrySize = 0,
@@ -133,7 +133,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Gas Boiler",
+                Name = "GB",
                 Fill = new SolidColorPaint(GBC),
                 Values = SGasBoilerOutput,
                 GeometrySize = 0,
@@ -144,7 +144,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Oil Boiler",
+                Name = "OB",
                 Fill = new SolidColorPaint(OBC),
                 Values = SOilBoilerOutput,
                 GeometrySize = 0,
@@ -312,7 +312,7 @@ namespace OptiHeatPro.ViewModels
         {
             new StackedStepAreaSeries<double>
             {
-                Name = "Gas Motor",
+                Name = "GM",
                 Fill = new SolidColorPaint(GMC),
                 Values = WGasMotorOutput,
                 GeometrySize = 0,
@@ -323,7 +323,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Electric Boiler",
+                Name = "EK",
                 Fill = new SolidColorPaint(EBC),
                 Values = WElectricBoilerOutput,
                 GeometrySize = 0,
@@ -334,7 +334,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Gas Boiler",
+                Name = "GB",
                 Fill = new SolidColorPaint(GBC),
                 Values = WGasBoilerOutput,
                 GeometrySize = 0,
@@ -345,7 +345,7 @@ namespace OptiHeatPro.ViewModels
             },
             new StackedStepAreaSeries<double>
             {
-                Name = "Oil Boiler",
+                Name = "OB",
                 Fill = new SolidColorPaint(OBC),
                 Values = WOilBoilerOutput,
                 GeometrySize = 0,
