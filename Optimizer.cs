@@ -11,6 +11,7 @@ namespace OptiHeatPro
         public double GasMotorOutput { get; set; }
         public double ElectricBoilerOutput { get; set; }
         public double TotalElectricityProduction { get; set; }
+        public double TotalElectricityConsumption { get; set; }
         public decimal TotalProductionCost { get; set; }
         public double TotalGasConsumption { get; set; }
         public double TotalOilConsumption { get; set; }
@@ -51,6 +52,7 @@ namespace OptiHeatPro
                 double gasMotorOutput = 0;
                 double electricBoilerOutput = 0;
                 double totalElectricityProduction = 0;
+                double totalElectricityConsumption = 0;
                 decimal totalProductionCost = 0;
                 double totalGasConsumption = 0;
                 double totalOilConsumption = 0;
@@ -84,6 +86,7 @@ namespace OptiHeatPro
                         electricityRatio = boiler.MaxElectricity.Value / boiler.MaxHeat;
                         boilerCost = (decimal)allocatedHeat * boiler.ProductionCosts;
                         totalElectricityProduction += electricityRatio * allocatedHeat;
+                        totalElectricityConsumption += totalElectricityProduction;
                         gasMotorOutput += allocatedHeat;
                         totalGasConsumption += boiler.GasConsumption * allocatedHeat;
                     }
@@ -91,6 +94,7 @@ namespace OptiHeatPro
                     {
                         boilerCost = (decimal)allocatedHeat * boiler.ProductionCosts;
                         electricBoilerOutput += allocatedHeat;
+                        totalElectricityConsumption = electricBoilerOutput;
 
                     }
 
@@ -105,6 +109,7 @@ namespace OptiHeatPro
                     GasMotorOutput = gasMotorOutput,
                     ElectricBoilerOutput = electricBoilerOutput,
                     TotalElectricityProduction = totalElectricityProduction,
+                    TotalElectricityConsumption = totalElectricityConsumption,
                     TotalProductionCost = totalProductionCost,
                     TotalGasConsumption = totalGasConsumption,
                     TotalOilConsumption = totalOilConsumption,
