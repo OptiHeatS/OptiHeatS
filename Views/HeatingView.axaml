@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Winter Period:" FontWeight="Bold" Margin="10" Grid.Row="0" Grid.Column="0"/>
-        <DataGrid ItemsSource="{Binding WinterData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" IsReadOnly="True">
+        <DataGrid ItemsSource="{Binding WinterData}" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Foreground>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Time From" Binding="{Binding TimeFrom, StringFormat='dd/MM/yyyy HH:mm'}" />
                 <DataGridTextColumn Header="Time To" Binding="{Binding TimeTo, StringFormat='dd/MM/yyyy HH:mm'}" />

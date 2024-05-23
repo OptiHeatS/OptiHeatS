@@ -16,7 +16,9 @@
           "Avalonia.ReactiveUI": "11.0.10",
           "Avalonia.Themes.Fluent": "11.0.10",
           "CommunityToolkit.Mvvm": "8.2.2",
-          "LiveChartsCore.SkiaSharpView.Avalonia": "2.0.0-rc2"
+          "LiveChartsCore.SkiaSharpView.Avalonia": "2.0.0-rc2",
+          "Material.Avalonia": "3.6.0",
+          "Material.Avalonia.DataGrid": "3.6.0"
         },
         "runtime": {
           "OptiHeatS.dll": {}
@@ -392,6 +394,42 @@
           "lib/net6.0/LiveChartsCore.SkiaSharpView.Avalonia.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Material.Avalonia/3.6.0": {
+        "dependencies": {
+          "Avalonia": "11.0.10"
+        },
+        "runtime": {
+          "lib/net8.0/Material.Avalonia.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          },
+          "lib/net8.0/Material.Colors.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          },
+          "lib/net8.0/Material.Ripple.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          },
+          "lib/net8.0/Material.Styles.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      },
+      "Material.Avalonia.DataGrid/3.6.0": {
+        "dependencies": {
+          "Avalonia": "11.0.10",
+          "Avalonia.Controls.DataGrid": "11.0.10",
+          "Material.Avalonia": "3.6.0"
+        },
+        "runtime": {
+          "lib/net8.0/Material.Avalonia.DataGrid.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
           }
         }
       },
@@ -1179,6 +1217,20 @@
       "sha512": "sha512-1ykqsUd8qKP2Iste0cnRa+mpnC49IHElE5saz8y+eeYynfTLo15YhnPJGWGit4mdvrWIQgT/1QCcE26tfdKvDw==",
       "path": "livechartscore.skiasharpview.avalonia/2.0.0-rc2",
       "hashPath": "livechartscore.skiasharpview.avalonia.2.0.0-rc2.nupkg.sha512"
+    },
+    "Material.Avalonia/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y8SQV+CutVF3cDP2wTZ+zAhmXFdsksxJZ1BrKbgQ6nJ5U2/Uy6HyKl5m2FiRK6FM0kNzqlHiGcvjyo8HgahQ5Q==",
+      "path": "material.avalonia/3.6.0",
+      "hashPath": "material.avalonia.3.6.0.nupkg.sha512"
+    },
+    "Material.Avalonia.DataGrid/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/gQmBpiBk6do0RsmKVcZQSK0saDN/xUOfUzfJ8hMLkR+13w6iR6+RCX7ypTLJGcLeE1V6F+62zv0CgRAND34tw==",
+      "path": "material.avalonia.datagrid/3.6.0",
+      "hashPath": "material.avalonia.datagrid.3.6.0.nupkg.sha512"
     },
     "MicroCom.Runtime/0.11.0": {
       "type": "package",

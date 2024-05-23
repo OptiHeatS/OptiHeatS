@@ -1,33 +1,39 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:OptiHeatPro.ViewModels"
+             xmlns:styles="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              x:Class="OptiHeatPro.Views.AboutView"
              x:DataType="vm:AboutViewModel">
-    <Grid>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <Image Source="..\Assets\sdu.png" Width="200" Height="200"/>
-            <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-            <TextBlock Text="This is a 2nd Semester group project application, used for optimizing heating efficiency." FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-            <TextBlock Text="OptiHeatS was developed by Group 17 SDU Software Engineering students:" FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-            <TextBlock Text="Stefan Capatina" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-            <TextBlock Text="Benediktas Bartkus" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-            <TextBlock Text="Alex Florov" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-            <TextBlock Text="Dovydas Gansauskas" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-            <TextBlock Text="Simonas Tarasauskas" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="0 20 0 0"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Margin="20 0 0 0">
-            <Image Source="..\Assets\danfoss.png" Width="200" Height="200"/>
-            <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-            <TextBlock Text="All data used in our calculations was provided by Danfoss." FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-            <TextBlock Text="Every image and logo used in this project belongs to the authors. (Danfoss, SDU)" FontWeight="Bold" FontSize="15" Margin="0 5 0 0"/>
-        </StackPanel>
+        
+        <styles:Card Grid.Column="0" Grid.Row="0" Margin="10" Width="610" Height="600">
+            <StackPanel HorizontalAlignment="Center">
+                <Image Source="..\Assets\sdu.png" Width="200" Height="200"/>
+                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                <TextBlock Text="This is a 2nd Semester group project application, used for optimizing heating efficiency." FontWeight="Bold" FontSize="15" Margin="0 5 0 0" TextAlignment="Center"/>
+                <TextBlock Text="OptiHeatS was developed by Group 17 SDU Software Engineering students:" FontWeight="Bold" FontSize="15" Margin="0 5 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Stefan Capatina" FontWeight="Bold" FontSize="15" Margin="0 10 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Benediktas Bartkus" FontWeight="Bold" FontSize="15" Margin="0 10 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Alex Florov" FontWeight="Bold" FontSize="15" Margin="0 10 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Dovydas Gansauskas" FontWeight="Bold" FontSize="15" Margin="0 10 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Simonas Tarasauskas" FontWeight="Bold" FontSize="15" Margin="0 10 0 0" TextAlignment="Center"/>
+            </StackPanel>
+        </styles:Card>
+        
+        <styles:Card Grid.Column="1" Grid.Row="0" Margin="10" Width="610" Height="600">
+            <StackPanel HorizontalAlignment="Center">
+                <Image Source="..\Assets\danfoss.png" Width="200" Height="200"/>
+                <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                <TextBlock Text="All data used in our calculations was provided by Danfoss." FontWeight="Bold" FontSize="15" Margin="0 5 0 0" TextAlignment="Center"/>
+                <TextBlock Text="Every image and logo used in this project belongs to the authors. (Danfoss, SDU)" FontWeight="Bold" FontSize="15" Margin="0 5 0 0" TextAlignment="Center"/>
+            </StackPanel>
+        </styles:Card>
     </Grid>
 </UserControl>

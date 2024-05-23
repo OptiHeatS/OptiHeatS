@@ -726,3 +726,8 @@ C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.dll
 C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.dll
 C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
 C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\SkiaSharp.HarfBuzz.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\Material.Avalonia.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\Material.Colors.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\Material.Ripple.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\Material.Styles.dll
+C:\Users\Benediktas\Desktop\OptiHeatS\bin\Debug\net8.0\Material.Avalonia.DataGrid.dll

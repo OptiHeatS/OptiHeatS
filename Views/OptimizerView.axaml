@@ -2,73 +2,102 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:OptiHeatPro.ViewModels"
              x:Class="OptiHeatPro.Views.OptimizerView"
-             x:DataType="vm:OptimizerViewModel">
+             x:DataType="vm:OptimizerViewModel"
+             xmlns:styles="clr-namespace:Material.Styles.Controls;assembly=Material.Styles">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <!-- Winter Results Cards -->
         <StackPanel Grid.Column="0" Margin="20">
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Winter results:" FontWeight="Bold" />
-            </TextBlock>
-            <Border Background="Black" Height="2" Margin="20,10,20,10"/>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Electricity Production: " />
-                <Run Text="{Binding WTotalResult.TotalElectricityProduction, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" MW" />
-            </TextBlock>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Production Cost: " />
-                <Run Text="{Binding WTotalResult.TotalProductionCost, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" DKK" />
-            </TextBlock>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Gas Consumption: " />
-                <Run Text="{Binding WTotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" MW" />
-            </TextBlock>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Oil Consumption: " />
-                <Run Text="{Binding WTotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold"/>
-                <Run Text=" MW" />
-            </TextBlock>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total CO2 Emissions: " />
-                <Run Text="{Binding WTotalResult.TotalCO2Emissions, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" kg" />
-            </TextBlock>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Winter results:" FontWeight="Bold" />
+                </TextBlock>
+            </styles:Card>
+                <Border Background="Black" Height="2" Margin="20,10,20,10"/>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Electricity Production: " />
+                    <Run Text="{Binding WTotalResult.TotalElectricityProduction, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Production Cost: " />
+                    <Run Text="{Binding WTotalResult.TotalProductionCost, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" DKK" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Gas Consumption: " />
+                    <Run Text="{Binding WTotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Oil Consumption: " />
+                    <Run Text="{Binding WTotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold"/>
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total CO2 Emissions: " />
+                    <Run Text="{Binding WTotalResult.TotalCO2Emissions, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" kg" />
+                </TextBlock>
+            </styles:Card>
         </StackPanel>
+
+        <!-- Summer Results Cards -->
         <StackPanel Grid.Column="1" Margin="20">
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Summer results:" FontWeight="Bold" />
-            </TextBlock>
-            <Border Background="Black" Height="2" Margin="20,10,20,10"/>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Electricity Production: " />
-                <Run Text="{Binding STotalResult.TotalElectricityProduction, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" MW" />
-            </TextBlock>
-            <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total Production Cost: " />
-                <Run Text="{Binding STotalResult.TotalProductionCost, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" DKK" />
-            </TextBlock>
-    <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-        <Run Text="Total Gas Consumption: " />
-        <Run Text="{Binding STotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-        <Run Text=" MW" />
-    </TextBlock>
-    <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-        <Run Text="Total Oil Consumption: " />
-        <Run Text="{Binding STotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
-        <Run Text=" MW" />
-    </TextBlock>
-    <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
-                <Run Text="Total CO2 Emissions: " />
-                <Run Text="{Binding STotalResult.TotalCO2Emissions, StringFormat={}{0:F1}}" FontWeight="Bold" />
-                <Run Text=" kg" />
-            </TextBlock>    
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Summer results:" FontWeight="Bold" />
+                </TextBlock>
+            </styles:Card>
+                <Border Background="Black" Height="2" Margin="20,10,20,10"/>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Electricity Production: " />
+                    <Run Text="{Binding STotalResult.TotalElectricityProduction, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Production Cost: " />
+                    <Run Text="{Binding STotalResult.TotalProductionCost, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" DKK" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Gas Consumption: " />
+                    <Run Text="{Binding STotalResult.TotalGasConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Oil Consumption: " />
+                    <Run Text="{Binding STotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total CO2 Emissions: " />
+                    <Run Text="{Binding STotalResult.TotalCO2Emissions, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" kg" />
+                </TextBlock>
+            </styles:Card>
         </StackPanel>
     </Grid>
 </UserControl>
