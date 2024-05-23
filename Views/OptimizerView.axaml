@@ -9,8 +9,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <!-- Winter Results Cards -->
         <StackPanel Grid.Column="0" Margin="20">
             <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
                 <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
@@ -48,14 +46,19 @@
             </styles:Card>
             <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
                 <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Electricity Consumption: " />
+                    <Run Text="{Binding WTotalResult.TotalElectricityConsumption, StringFormat={}{0:F1}}" FontWeight="Bold"/>
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                     <Run Text="Total CO2 Emissions: " />
                     <Run Text="{Binding WTotalResult.TotalCO2Emissions, StringFormat={}{0:F1}}" FontWeight="Bold" />
                     <Run Text=" kg" />
                 </TextBlock>
             </styles:Card>
         </StackPanel>
-
-        <!-- Summer Results Cards -->
         <StackPanel Grid.Column="1" Margin="20">
             <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
                 <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
@@ -88,6 +91,13 @@
                 <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
                     <Run Text="Total Oil Consumption: " />
                     <Run Text="{Binding STotalResult.TotalOilConsumption, StringFormat={}{0:F1}}" FontWeight="Bold" />
+                    <Run Text=" MW" />
+                </TextBlock>
+            </styles:Card>
+            <styles:Card MinWidth="240" VerticalAlignment="Top" Margin="0 10">
+                <TextBlock FontSize="18" Margin="0 5 0 0" HorizontalAlignment="Center">
+                    <Run Text="Total Electricity Consumption: " />
+                    <Run Text="{Binding STotalResult.TotalElectricityConsumption, StringFormat={}{0:F1}}" FontWeight="Bold"/>
                     <Run Text=" MW" />
                 </TextBlock>
             </styles:Card>

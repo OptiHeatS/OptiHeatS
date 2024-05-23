@@ -9,7 +9,7 @@
         x:DataType="vm:MainWindowViewModel"
         xmlns:local="clr-namespace:OptiHeatPro.Views"
         Icon="..\Assets\icon.ico"
-        Title="OptiHeatPro"
+        Title="OptiHeatS - Heating optimization software"
         Width="1260" Height="660">
     <DockPanel LastChildFill="True">
         <Border CornerRadius="0" Background="#e2000f" DockPanel.Dock="Top" HorizontalAlignment="Stretch" PointerPressed="TitleBar_OnPointerPressed">
@@ -26,7 +26,7 @@
             </Grid>       
         </Border>
         <TabControl TabStripPlacement="Top">
-            <TabItem Header="Boilers" FontSize="20">
+            <TabItem Header="Assets" FontSize="20">
                 <local:BoilersView DataContext="{Binding BoilersViewModel}" />
             </TabItem>
             <TabItem Header="Heating" FontSize="20">
