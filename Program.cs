@@ -34,7 +34,7 @@ namespace OptiHeatPro
 
         private static void WriteResults(List<DataEntry> data, string filePath, Optimizer optimizer, ResultDataManager resultDataManager)
         {
-            var results = optimizer.Optimize(data);
+            var results = optimizer.Optimize(data, 0);
             resultDataManager.WriteResultsToCSV(results, filePath);
         }
     }

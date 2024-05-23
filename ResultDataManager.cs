@@ -23,8 +23,6 @@ namespace OptiHeatPro
                         writer.WriteLine($"{result.GasBoilerOutput},{result.OilBoilerOutput},{result.GasMotorOutput},{result.ElectricBoilerOutput},{result.TotalElectricityProduction},{result.TotalElectricityConsumption},{result.TotalProductionCost:F2},{result.TotalGasConsumption},{result.TotalOilConsumption},{result.TotalCO2Emissions}");
                     }
                 }
-
-                Console.WriteLine("Results written to CSV successfully.");
             }
             catch (IOException ex)
             {

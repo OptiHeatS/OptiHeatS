@@ -24,7 +24,7 @@ namespace OptiHeatPro.ViewModels
             HeatingData _heatingData = new HeatingData();
             _heatingData.Read();
             Optimizer optimizer = new Optimizer();
-            List<Result> results = optimizer.Optimize(_heatingData.WinterData);
+            List<Result> results = optimizer.Optimize(_heatingData.WinterData, 0);
 
             WTotalResult = new Result();
             foreach (var result in results)
@@ -36,7 +36,7 @@ namespace OptiHeatPro.ViewModels
             WTotalResult.TotalElectricityConsumption += result.TotalElectricityConsumption;
             WTotalResult.TotalCO2Emissions += result.TotalCO2Emissions;
             }
-            results = optimizer.Optimize(_heatingData.SummerData);
+            results = optimizer.Optimize(_heatingData.SummerData, 0);
 
             STotalResult = new Result();
             foreach (var result in results)
