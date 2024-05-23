@@ -23,7 +23,11 @@
     </TabItem>
 
     <TabItem Header="Electricity Production" FontSize="20">
-        <lvc:CartesianChart Series="{Binding WinterElectricityProduction}" Title="{Binding EPDTitle}" LegendPosition="Bottom" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HYAxes}"></lvc:CartesianChart>
+        <lvc:CartesianChart Series="{Binding WinterElectricityProduction}" Title="{Binding EPDTitle}" LegendPosition="Bottom" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HEYAxes}"></lvc:CartesianChart>
+    </TabItem>
+
+    <TabItem Header="Electricity Consumption" FontSize="20">
+        <lvc:CartesianChart Series="{Binding WinterElectricityConsumption}" Title="{Binding EPDTitle}" LegendPosition="Bottom" ZoomMode="X" DrawMarginFrame="{Binding DrawMarginFrame}" XAxes="{Binding WXAxes}" YAxes="{Binding HEYAxes}"></lvc:CartesianChart>
     </TabItem>
 
     <TabItem Header="Fuel Consumption" FontSize="20">
