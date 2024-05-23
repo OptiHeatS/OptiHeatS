@@ -8,22 +8,9 @@
         x:Class="OptiHeatPro.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         xmlns:local="clr-namespace:OptiHeatPro.Views"
-        Icon="..\Assets\avalonia-logo.ico"
-        Title="OptiHeatPro"
-        Width="1260" Height="660"
-        SystemDecorations="None">
-        <Window.Styles>
-    <Style Selector="Button#MinimizeButton">
-        <Setter Property="Background" Value="rgba(255, 255, 255, 1)"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>
-    <Style Selector="Button#CloseButton">
-        <Setter Property="Background" Value="rgba(255, 255, 255, 1)"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>
-</Window.Styles>
+        Icon="..\Assets\icon.ico"
+        Title="OptiHeatS - Heating optimization software"
+        Width="1260" Height="660">
     <DockPanel LastChildFill="True">
         <Border CornerRadius="0" Background="#e2000f" DockPanel.Dock="Top" HorizontalAlignment="Stretch" PointerPressed="TitleBar_OnPointerPressed">
             <Grid>
@@ -32,10 +19,6 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 5 0">
-            <Button x:Name="MinimizeButton" Content="—" Width="30" Margin="0 0 2 0" Click="MinimizeWindow"/>
-            <Button  x:Name="CloseButton" Content="X" Width="30" Click="CloseWindow"/>
-            </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Image Source="..\Assets\danfoss.png" Width="100" Height="50"/>
                 <TextBlock Margin="5" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="OptiHeatS" Foreground="White"/>
@@ -43,22 +26,22 @@
             </Grid>       
         </Border>
         <TabControl TabStripPlacement="Top">
-            <TabItem Header="Boilers">
+            <TabItem Header="Assets" FontSize="20">
                 <local:BoilersView DataContext="{Binding BoilersViewModel}" />
             </TabItem>
-            <TabItem Header="Heating">
+            <TabItem Header="Heating" FontSize="20">
                 <local:HeatingView DataContext="{Binding HeatingViewModel}" />
             </TabItem>
-            <TabItem Header="Optimization">
+            <TabItem Header="Optimization" FontSize="20">
                 <local:OptimizerView DataContext="{Binding OptimizerViewModel}" />
             </TabItem>
-            <TabItem Header="Summer Graphs">
+            <TabItem Header="Summer Graphs" FontSize="20">
                 <local:SummerGraphView DataContext="{Binding GraphViewModel}" />
             </TabItem>
-            <TabItem Header="Winter Graphs">
+            <TabItem Header="Winter Graphs" FontSize="20">
                 <local:WinterGraphView DataContext="{Binding GraphViewModel}" />
             </TabItem>
-            <TabItem Header="About">
+            <TabItem Header="About" FontSize="20">
                 <local:AboutView DataContext="{Binding AboutViewModel}" />
             </TabItem>
         </TabControl>

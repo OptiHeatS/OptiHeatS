@@ -2,7 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="OptiHeatPro.App"
              xmlns:local="using:OptiHeatPro"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Light"
+             xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
@@ -10,7 +11,11 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <FluentTheme />
-        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+        <Style>
+        <Style.Resources>
+        <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="Red"></SolidColorBrush>
+        </Style.Resources>
+        </Style>
+        <themes:MaterialTheme BaseTheme="Light" PrimaryColor="Red" SecondaryColor="Lime" />
     </Application.Styles>
 </Application>

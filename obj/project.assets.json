@@ -532,6 +532,41 @@
           }
         }
       },
+      "Material.Avalonia/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.9"
+        },
+        "compile": {
+          "lib/net8.0/Material.Avalonia.dll": {},
+          "lib/net8.0/Material.Colors.dll": {},
+          "lib/net8.0/Material.Ripple.dll": {},
+          "lib/net8.0/Material.Styles.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Material.Avalonia.dll": {},
+          "lib/net8.0/Material.Colors.dll": {},
+          "lib/net8.0/Material.Ripple.dll": {},
+          "lib/net8.0/Material.Styles.dll": {}
+        }
+      },
+      "Material.Avalonia.DataGrid/3.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.9",
+          "Avalonia.Controls.DataGrid": "11.0.9",
+          "Material.Avalonia": "3.6.0"
+        },
+        "compile": {
+          "lib/net8.0/Material.Avalonia.DataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Material.Avalonia.DataGrid.dll": {}
+        },
+        "build": {
+          "buildTransitive/Material.Avalonia.DataGrid.props": {}
+        }
+      },
       "MicroCom.Runtime/0.11.0": {
         "type": "package",
         "compile": {
@@ -2220,6 +2255,43 @@
         "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.Avalonia.xml",
         "livechartscore.skiasharpview.avalonia.2.0.0-rc2.nupkg.sha512",
         "livechartscore.skiasharpview.avalonia.nuspec"
+      ]
+    },
+    "Material.Avalonia/3.6.0": {
+      "sha512": "Y8SQV+CutVF3cDP2wTZ+zAhmXFdsksxJZ1BrKbgQ6nJ5U2/Uy6HyKl5m2FiRK6FM0kNzqlHiGcvjyo8HgahQ5Q==",
+      "type": "package",
+      "path": "material.avalonia/3.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FavIcon.png",
+        "README.md",
+        "lib/net8.0/Material.Avalonia.dll",
+        "lib/net8.0/Material.Colors.dll",
+        "lib/net8.0/Material.Ripple.dll",
+        "lib/net8.0/Material.Styles.dll",
+        "lib/netstandard2.0/Material.Avalonia.dll",
+        "lib/netstandard2.0/Material.Colors.dll",
+        "lib/netstandard2.0/Material.Ripple.dll",
+        "lib/netstandard2.0/Material.Styles.dll",
+        "material.avalonia.3.6.0.nupkg.sha512",
+        "material.avalonia.nuspec"
+      ]
+    },
+    "Material.Avalonia.DataGrid/3.6.0": {
+      "sha512": "/gQmBpiBk6do0RsmKVcZQSK0saDN/xUOfUzfJ8hMLkR+13w6iR6+RCX7ypTLJGcLeE1V6F+62zv0CgRAND34tw==",
+      "type": "package",
+      "path": "material.avalonia.datagrid/3.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FavIcon.png",
+        "build/Material.Avalonia.DataGrid.props",
+        "buildTransitive/Material.Avalonia.DataGrid.props",
+        "lib/net8.0/Material.Avalonia.DataGrid.dll",
+        "lib/netstandard2.0/Material.Avalonia.DataGrid.dll",
+        "material.avalonia.datagrid.3.6.0.nupkg.sha512",
+        "material.avalonia.datagrid.nuspec"
       ]
     },
     "MicroCom.Runtime/0.11.0": {
@@ -4790,29 +4862,47 @@
       "Avalonia.ReactiveUI >= 11.0.10",
       "Avalonia.Themes.Fluent >= 11.0.10",
       "CommunityToolkit.Mvvm >= 8.2.2",
-      "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2"
+      "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2",
+      "Material.Avalonia >= 3.6.0",
+      "Material.Avalonia.DataGrid >= 3.6.0"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\simon\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\Benediktas\\.nuget\\packages\\": {}
+>>>>>>> 246f6536c4eb090028fdbb0de52cb833033bf131
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
       "projectName": "OptiHeatS",
       "projectPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
       "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+      "projectName": "OptiHeatS",
+      "projectPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+      "packagesPath": "C:\\Users\\Benediktas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\",
+>>>>>>> 246f6536c4eb090028fdbb0de52cb833033bf131
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+        "C:\\Users\\Benediktas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 246f6536c4eb090028fdbb0de52cb833033bf131
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4832,11 +4922,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4878,6 +4963,14 @@
           "LiveChartsCore.SkiaSharpView.Avalonia": {
             "target": "Package",
             "version": "[2.0.0-rc2, )"
+          },
+          "Material.Avalonia": {
+            "target": "Package",
+            "version": "[3.6.0, )"
+          },
+          "Material.Avalonia.DataGrid": {
+            "target": "Package",
+            "version": "[3.6.0, )"
           }
         },
         "imports": [
@@ -4896,8 +4989,20 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 246f6536c4eb090028fdbb0de52cb833033bf131
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

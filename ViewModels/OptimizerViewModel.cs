@@ -33,6 +33,7 @@ namespace OptiHeatPro.ViewModels
             WTotalResult.TotalProductionCost += result.TotalProductionCost;
             WTotalResult.TotalGasConsumption += result.TotalGasConsumption;
             WTotalResult.TotalOilConsumption += result.TotalOilConsumption;
+            WTotalResult.TotalElectricityConsumption += result.TotalElectricityConsumption;
             WTotalResult.TotalCO2Emissions += result.TotalCO2Emissions;
             }
             results = optimizer.Optimize(_heatingData.SummerData);
@@ -44,6 +45,7 @@ namespace OptiHeatPro.ViewModels
             STotalResult.TotalProductionCost += result.TotalProductionCost;
             STotalResult.TotalGasConsumption += result.TotalGasConsumption;
             STotalResult.TotalOilConsumption += result.TotalOilConsumption;
+            STotalResult.TotalElectricityConsumption += result.TotalElectricityConsumption;
             STotalResult.TotalCO2Emissions += result.TotalCO2Emissions;
             }
         }

@@ -2,110 +2,147 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:OptiHeatPro.ViewModels"
              x:Class="OptiHeatPro.Views.BoilersView"
-             x:DataType="vm:BoilersViewModel">
+             x:DataType="vm:BoilersViewModel"
+             xmlns:styles="clr-namespace:Material.Styles.Controls;assembly=Material.Styles">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="10">
-                    <Image Source="..\Assets\gasboiler.jpg" Width="200" Height="200"/>
-                    <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                    <TextBlock Text="{Binding Boiler1.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler1.MaxHeat}" FontWeight="Bold"/>
-                        <Run Text="MW"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler1.ProductionCosts}" FontWeight="Bold" />
-                        <Run Text="DKK/MWh(th)"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler1.CO2Emissions}" FontWeight="Bold" />
-                        <Run Text="kg/MWh(th)"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler1.GasConsumption}" FontWeight="Bold"/>
-                        <Run Text="MWh(gas)/MWh(th)"/>
-                    </TextBlock>
-                </StackPanel>
 
-                <StackPanel Margin="10">
-                    <Image Source="..\Assets\oilboiler.jpg" Width="200" Height="200"/>
-                    <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                    <TextBlock Text="{Binding Boiler2.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler2.MaxHeat}" FontWeight="Bold"/>
-                        <Run Text="MW"/>
+            <StackPanel Orientation="Horizontal">
+                <styles:Card Margin="10" Width="400" Height="400">
+                    <StackPanel>
+                        <Image Source="..\Assets\gasboiler.jpg" Width="200" Height="200"/>
+                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding Boiler1.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Heat: "/>
+                            <Run Text="{Binding Boiler1.MaxHeat}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Production Costs: "/>
+                            <Run Text="{Binding Boiler1.ProductionCosts}" FontWeight="Bold"/>
+                            <Run Text=" DKK/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="CO2 Emissions: "/>
+                            <Run Text="{Binding Boiler1.CO2Emissions}" FontWeight="Bold"/>
+                            <Run Text=" kg/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Gas Consumption: "/>
+                            <Run Text="{Binding Boiler1.GasConsumption}" FontWeight="Bold"/>
+                            <Run Text=" MWh(gas)/MWh(th)"/>
+                        </TextBlock>
+                    </StackPanel>
+                </styles:Card>
+
+                <styles:Card Margin="10" Width="400" Height="400">
+                    <StackPanel>
+                        <Image Source="..\Assets\oilboiler.jpg" Width="200" Height="200"/>
+                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding Boiler2.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Heat: "/>
+                            <Run Text="{Binding Boiler2.MaxHeat}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Production Costs: "/>
+                            <Run Text="{Binding Boiler2.ProductionCosts}" FontWeight="Bold"/>
+                            <Run Text=" DKK/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="CO2 Emissions: "/>
+                            <Run Text="{Binding Boiler2.CO2Emissions}" FontWeight="Bold"/>
+                            <Run Text=" kg/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Gas Consumption: "/>
+                            <Run Text="{Binding Boiler2.GasConsumption}" FontWeight="Bold"/>
+                            <Run Text=" MWh(oil)/MWh(th)"/>
+                        </TextBlock>
+                    </StackPanel>
+                </styles:Card>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <styles:Card Margin="10" Width="400" Height="400">
+                    <StackPanel>
+                        <Image Source="..\Assets\gasmotor.jpg" Width="200" Height="200"/>
+                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding Boiler3.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Heat: "/>
+                            <Run Text="{Binding Boiler3.MaxHeat}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Electricity: "/>
+                            <Run Text="{Binding Boiler3.MaxElectricity}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Production Costs: "/>
+                            <Run Text="{Binding Boiler3.ProductionCosts}" FontWeight="Bold"/>
+                            <Run Text=" DKK/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="CO2 Emissions: "/>
+                            <Run Text="{Binding Boiler3.CO2Emissions}" FontWeight="Bold"/>
+                            <Run Text=" kg/MWh(th)"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Gas Consumption: "/>
+                            <Run Text="{Binding Boiler3.GasConsumption}" FontWeight="Bold"/>
+                            <Run Text=" MWh(gas)/MWh(th)"/>
+                        </TextBlock>
+                    </StackPanel>
+                </styles:Card>
+
+                <styles:Card Margin="10" Width="400" Height="400">
+                    <StackPanel>
+                        <Image Source="..\Assets\electricboiler.jpg" Width="200" Height="200"/>
+                        <Border Background="Black" Height="2" Margin="0,10,0,10"/>
+                        <TextBlock Text="{Binding Boiler4.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Heat: "/>
+                            <Run Text="{Binding Boiler4.MaxHeat}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Max Electricity: "/>
+                            <Run Text="{Binding Boiler4.MaxElectricity}" FontWeight="Bold"/>
+                            <Run Text=" MW"/>
+                        </TextBlock>
+                        <TextBlock FontSize="18" Margin="0 5 0 0">
+                            <Run Text="Production Costs: "/>
+                            <Run Text="{Binding Boiler4.ProductionCosts}" FontWeight="Bold"/>
+                            <Run Text=" DKK/MWh(th)"/>
+                        </TextBlock>
+                    </StackPanel>
+                </styles:Card>
+            </StackPanel>
+            <styles:Card Margin="10" Width="820" Height="500">
+            <StackPanel>
+                <TextBlock Text="Heating Area" FontSize="20" FontWeight="Bold" Margin="0 10"/>
+                <Image Source="..\Assets\heating-area.png" Width="550" Height="300" Margin="0 10"/>
+                <Border Background="Black" Height="2" Margin="0 10"/>
+                <StackPanel Orientation="Vertical" Margin="10 0 0 10">
+                    <TextBlock FontSize="18">
+                        <Run Text="Architecture: " FontWeight="Bold"/>
+                        <Run Text="Single district heating network"/>
                     </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler2.ProductionCosts}" FontWeight="Bold"/>
-                        <Run Text="DKK/MWh(th)"/>
+                    <TextBlock FontSize="18">
+                        <Run Text="Size: " FontWeight="Bold"/>
+                        <Run Text="1600 Buildings"/>
                     </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler2.CO2Emissions}" FontWeight="Bold"/>
-                        <Run Text="kg/MWh(th)"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler2.GasConsumption}" FontWeight="Bold"/>
-                        <Run Text="MWh(oil)/MWh(th)"/>
+                    <TextBlock FontSize="18">
+                        <Run Text="City: " FontWeight="Bold"/>
+                        <Run Text="Heatington"/>
                     </TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="10">
-                    <Image Source="..\Assets\gasmotor.jpg" Width="200" Height="200"/>
-                    <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                    <TextBlock Text="{Binding Boiler3.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler3.MaxHeat}" FontWeight="Bold"/>
-                        <Run Text="MW"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler3.ProductionCosts}" FontWeight="Bold" />
-                        <Run Text="DKK/MWh(th)"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="CO2 Emissions: "/>
-                        <Run Text="{Binding Boiler3.CO2Emissions}" FontWeight="Bold" />
-                        <Run Text="kg/MWh(th)"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Gas Consumption: "/>
-                        <Run Text="{Binding Boiler3.GasConsumption}" FontWeight="Bold" />
-                        <Run Text="MWh(gas)/MWh(th)"/>
-                    </TextBlock>
-                </StackPanel>
-
-                <StackPanel Margin="10">
-                    <Image Source="..\Assets\electricboiler.jpg" Width="200" Height="200"/>
-                    <Border Background="Black" Height="2" Margin="0,10,0,10"/>
-                    <TextBlock Text="{Binding Boiler4.Name}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Max Heat: "/>
-                        <Run Text="{Binding Boiler4.MaxHeat}" FontWeight="Bold"/>
-                        <Run Text="MW"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Max Electricity: "/>
-                        <Run Text="{Binding Boiler4.MaxElectricity}" FontWeight="Bold"/>
-                        <Run Text="MW"/>
-                    </TextBlock>
-                    <TextBlock FontSize="18" Margin="0 5 0 0">
-                        <Run Text="Production Costs: "/>
-                        <Run Text="{Binding Boiler4.ProductionCosts}" FontWeight="Bold"/>
-                        <Run Text="DKK/MWh(th)          "/>
-                    </TextBlock>
-                </StackPanel>
-            </StackPanel>
+        </styles:Card>
         </StackPanel>
     </ScrollViewer>
 </UserControl>
