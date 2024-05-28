@@ -13,30 +13,30 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OptiHeatS
-build_property.ProjectDir = C:\Users\PC\Desktop\Semester project\OptiHeatS\
+build_property.ProjectDir = C:\Users\simon\Desktop\C#\semester project\OptiHeatS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/App.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/AboutView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/AboutView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/BoilersView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/BoilersView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/HeatingView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/HeatingView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/MainWindow.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/OptimizerView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/OptimizerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/SummerGraphView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/SummerGraphView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PC/Desktop/Semester project/OptiHeatS/Views/WinterGraphView.axaml]
+[C:/Users/simon/Desktop/C\#/semester project/OptiHeatS/Views/WinterGraphView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

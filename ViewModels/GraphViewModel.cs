@@ -12,50 +12,73 @@ using ReactiveUI;
 using System.Dynamic;
 using OptiHeatPro.Views;
 using System.Security.Cryptography.X509Certificates;
+using LiveChartsCore.Defaults;
 
 namespace OptiHeatPro.ViewModels
 {
-    public partial class GraphViewModel : ObservableObject
+    public partial class GraphViewModel : ViewModelBase
     {
-        private HeatingData _heatingData;
-        
+        private static readonly SKColor GBC = new(204,166,51);
+        private static readonly SKColor OBC = new(197,90,17);
+        private static readonly SKColor GMC = new(0,112,192);
+        private static readonly SKColor EBC = new(51,192,115);
+        private HeatingData _heatingData = new HeatingData();
+
         // Each graph needs its own list
         private static List<decimal> SElectricityPrice = new List<decimal>{};
         private static List<double> SHeatDemand = new List<double>{};
         private static List<string> SDnT = new List<string> {};
-        private static List<double> SGasBoilerOutput = new List<double> {};
-        private static List<double> SOilBoilerOutput = new List<double> {};
-
-        private static List<double> SGasMotorOutput = new List<double> {};
-        private static List<double> SElectricBoilerOutput = new List<double> {};
-        private static List<double> STotalElectricityProduction = new List<double> {};
-        private static List<double> STotalElectricityConsumption = new List<double> {};
-        private static List<decimal> STotalProductionCost = new List<decimal> {};
-        private static List<double> STotalGasConsumption = new List<double> {};
-        private static List<double> STotalOilConsumption = new List<double> {};
-        private static List<double> STotalCO2Emissions = new List<double> {};
-
+        private static ObservableCollection<ObservableValue> SGasBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> SOilBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> SGasMotorOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> SElectricBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalElectricityProduction = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalElectricityConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalProductionCost = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalGasConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalOilConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> STotalCO2Emissions = new ObservableCollection<ObservableValue>();
         private static List<decimal> WElectricityPrice = new List<decimal>{};
         private static List<double> WHeatDemand = new List<double>{};
         private static List<string> WDnT = new List<string> {};
-        private static List<double> WGasBoilerOutput = new List<double> {};
-        private static List<double> WOilBoilerOutput = new List<double> {};
-
-        private static List<double> WGasMotorOutput = new List<double> {};
-        private static List<double> WElectricBoilerOutput = new List<double> {};
-        private static List<double> WTotalElectricityProduction = new List<double> {};
-        private static List<double> WTotalElectricityConsumption = new List<double> {};
-        private static List<decimal> WTotalProductionCost = new List<decimal> {};
-        private static List<double> WTotalGasConsumption = new List<double> {};
-        private static List<double> WTotalOilConsumption = new List<double> {};
-        private static List<double> WTotalCO2Emissions = new List<double> {};
+        private static ObservableCollection<ObservableValue> WGasBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WOilBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WGasMotorOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WElectricBoilerOutput = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalElectricityProduction = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalElectricityConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalProductionCost = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalGasConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalOilConsumption = new ObservableCollection<ObservableValue>();
+        private static ObservableCollection<ObservableValue> WTotalCO2Emissions = new ObservableCollection<ObservableValue>();
         
-        public GraphViewModel(){
-            _heatingData = new HeatingData();
+        private int _co2ReductionPercentage = 0;
+        public int co2ReductionPercentage
+        {
+            get => _co2ReductionPercentage;
+            set => this.RaiseAndSetIfChanged(ref _co2ReductionPercentage, value);
+        }
+        Optimizer optimizer = new Optimizer();
+        public GraphViewModel()
+        {
             _heatingData.Read();
-            Optimizer optimizer = new Optimizer();
-            List<Result> Results = optimizer.Optimize(_heatingData.SummerData, 0);
-            
+
+            InitialGraphData();
+            UpdateWinter(co2ReductionPercentage);
+            UpdateSummer(co2ReductionPercentage);
+
+            this.WhenAnyValue(x => x.co2ReductionPercentage)
+            .Subscribe(newValue => { UpdateWinter(newValue); UpdateSummer(newValue); });
+        }
+
+        private void InitialGraphData()
+        {
+            SElectricityPrice.Clear(); //Have to do this because for some reason ViewModel is ran twice??
+            SHeatDemand.Clear();
+            SDnT.Clear();
+            WElectricityPrice.Clear();
+            WHeatDemand.Clear();
+            WDnT.Clear();
             foreach(var entry in _heatingData.SummerData)
             {
                 
@@ -63,22 +86,6 @@ namespace OptiHeatPro.ViewModels
                 SHeatDemand.Add(entry.HeatDemand);
                 SDnT.Add(Convert.ToString(entry.TimeFrom));
             }
-            foreach (var entry in Results)
-            {
-                SGasBoilerOutput.Add(entry.GasBoilerOutput);
-                SOilBoilerOutput.Add(entry.OilBoilerOutput);
-                SGasMotorOutput.Add(entry.GasMotorOutput);
-                SElectricBoilerOutput.Add(entry.ElectricBoilerOutput);
-                STotalElectricityProduction.Add(entry.TotalElectricityProduction);
-                STotalElectricityConsumption.Add(entry.TotalElectricityConsumption);
-                STotalProductionCost.Add(entry.TotalProductionCost);
-                STotalGasConsumption.Add(entry.TotalGasConsumption);
-                STotalOilConsumption.Add(entry.TotalOilConsumption);
-                STotalCO2Emissions.Add(entry.TotalCO2Emissions);
-            }
-
-            Results = optimizer.Optimize(_heatingData.WinterData, 0);
-
             foreach(var entry in _heatingData.WinterData)
             {
                 
@@ -86,29 +93,77 @@ namespace OptiHeatPro.ViewModels
                 WHeatDemand.Add(entry.HeatDemand);
                 WDnT.Add(Convert.ToString(entry.TimeFrom));
             }
+        }
+        private void UpdateWinter(int co2ReductionPercentage)
+        {
+            WGasBoilerOutput.Clear();
+            WOilBoilerOutput.Clear();
+            WGasMotorOutput.Clear();
+            WElectricBoilerOutput.Clear();
+            WTotalElectricityProduction.Clear();
+            WTotalElectricityConsumption.Clear();
+            WTotalProductionCost.Clear();
+            WTotalGasConsumption.Clear();
+            WTotalOilConsumption.Clear();
+            WTotalCO2Emissions.Clear();
+            List<Result> Results = optimizer.Optimize(_heatingData.WinterData, (double)co2ReductionPercentage/100);
+
             foreach (var entry in Results)
             {
-                WGasBoilerOutput.Add(entry.GasBoilerOutput);
-                WOilBoilerOutput.Add(entry.OilBoilerOutput);
-                WGasMotorOutput.Add(entry.GasMotorOutput);
-                WElectricBoilerOutput.Add(entry.ElectricBoilerOutput);
-                WTotalElectricityProduction.Add(entry.TotalElectricityProduction);
-                WTotalElectricityConsumption.Add(entry.TotalElectricityConsumption);
-                WTotalProductionCost.Add(entry.TotalProductionCost);
-                WTotalGasConsumption.Add(entry.TotalGasConsumption);
-                WTotalOilConsumption.Add(entry.TotalOilConsumption);
-                WTotalCO2Emissions.Add(entry.TotalCO2Emissions);
+                WGasBoilerOutput.Add(new(entry.GasBoilerOutput));
+                WOilBoilerOutput.Add(new(entry.OilBoilerOutput));
+                WGasMotorOutput.Add(new(entry.GasMotorOutput));
+                WElectricBoilerOutput.Add(new(entry.ElectricBoilerOutput));
+                WTotalElectricityProduction.Add(new(entry.TotalElectricityProduction));
+                WTotalElectricityConsumption.Add(new(entry.TotalElectricityConsumption));
+                WTotalProductionCost.Add(new((double)entry.TotalProductionCost));
+                WTotalGasConsumption.Add(new(entry.TotalGasConsumption));
+                WTotalOilConsumption.Add(new(entry.TotalOilConsumption));
+                WTotalCO2Emissions.Add(new(entry.TotalCO2Emissions));
             }
         }
+        private void UpdateSummer(int co2ReductionPercentage)
+        {
+            SGasBoilerOutput.Clear();
+            SOilBoilerOutput.Clear();
+            SGasMotorOutput.Clear();
+            SElectricBoilerOutput.Clear();
+            STotalElectricityProduction.Clear();
+            STotalElectricityConsumption.Clear();
+            STotalProductionCost.Clear();
+            STotalGasConsumption.Clear();
+            STotalOilConsumption.Clear();
+            STotalCO2Emissions.Clear();
+            List<Result> Results = optimizer.Optimize(_heatingData.SummerData, (double)co2ReductionPercentage/100);
 
-        private static readonly SKColor GBC = new(204,166,51);
-        private static readonly SKColor OBC = new(197,90,17);
-        private static readonly SKColor GMC = new(0,112,192);
-        private static readonly SKColor EBC = new(51,192,115);
-
+            foreach (var entry in Results)
+            {
+                SGasBoilerOutput.Add(new(entry.GasBoilerOutput));
+                SOilBoilerOutput.Add(new(entry.OilBoilerOutput));
+                SGasMotorOutput.Add(new(entry.GasMotorOutput));
+                SElectricBoilerOutput.Add(new(entry.ElectricBoilerOutput));
+                STotalElectricityProduction.Add(new(entry.TotalElectricityProduction));
+                STotalElectricityConsumption.Add(new(entry.TotalElectricityConsumption));
+                STotalProductionCost.Add(new((double)entry.TotalProductionCost));
+                STotalGasConsumption.Add(new(entry.TotalGasConsumption));
+                STotalOilConsumption.Add(new(entry.TotalOilConsumption));
+                STotalCO2Emissions.Add(new(entry.TotalCO2Emissions));
+            }
+        }
         public ISeries[] Summer { get; set; } =
         {
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
+            {
+                Name = "EK",
+                Fill = new SolidColorPaint(EBC),
+                Values = SElectricBoilerOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(EBC),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
+                ScalesYAt = 0
+            },
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "GM",
                 Fill = new SolidColorPaint(GMC),
@@ -119,19 +174,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
-            new StackedStepAreaSeries<double>
-            {
-                Name = "EK",
-                Fill = new SolidColorPaint(EBC),
-                Values = SElectricBoilerOutput,
-                GeometrySize = 0,
-                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
-                GeometryFill = new SolidColorPaint(EBC),
-                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
-                ScalesYAt = 0
-
-            },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "GB",
                 Fill = new SolidColorPaint(GBC),
@@ -142,7 +185,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "OB",
                 Fill = new SolidColorPaint(OBC),
@@ -194,7 +237,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SummerElectricityProduction { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Produced Electricity",
                 Values = STotalElectricityProduction,
@@ -221,7 +264,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SummerElectricityConsumption { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Consumed Electricity",
                 Values = STotalElectricityConsumption,
@@ -248,7 +291,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SummerConsumption { get; set; } =
         {
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "Gas",
                 Fill = new SolidColorPaint(GBC),
@@ -258,7 +301,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryFill = new SolidColorPaint(GBC),
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "Oil",
                 Fill = new SolidColorPaint(OBC),
@@ -284,7 +327,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SummerProductionCosts { get; set; } =
         {
-            new StepLineSeries<decimal>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Production Cost",
                 Values = STotalProductionCost,
@@ -297,7 +340,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] SummerEmissions { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "CO2 Emissions",
                 Values = STotalCO2Emissions,
@@ -310,18 +353,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] Winter { get; set; } =
         {
-            new StackedStepAreaSeries<double>
-            {
-                Name = "GM",
-                Fill = new SolidColorPaint(GMC),
-                Values = WGasMotorOutput,
-                GeometrySize = 0,
-                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
-                GeometryFill = new SolidColorPaint(GMC),
-                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
-                ScalesYAt = 0
-            },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "EK",
                 Fill = new SolidColorPaint(EBC),
@@ -332,7 +364,18 @@ namespace OptiHeatPro.ViewModels
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
+            {
+                Name = "GM",
+                Fill = new SolidColorPaint(GMC),
+                Values = WGasMotorOutput,
+                GeometrySize = 0,
+                Stroke = new SolidColorPaint(SKColors.DarkSlateGray) {StrokeThickness = 1},
+                GeometryFill = new SolidColorPaint(GMC),
+                GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
+                ScalesYAt = 0
+            },
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "GB",
                 Fill = new SolidColorPaint(GBC),
@@ -343,7 +386,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray),
                 ScalesYAt = 0
             },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "OB",
                 Fill = new SolidColorPaint(OBC),
@@ -395,7 +438,7 @@ namespace OptiHeatPro.ViewModels
         };
          public ISeries[] WinterElectricityProduction { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Produced Electricity",
                 Values = WTotalElectricityProduction,
@@ -421,7 +464,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] WinterElectricityConsumption { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Consumed Electricity",
                 Values = WTotalElectricityConsumption,
@@ -448,7 +491,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] WinterConsumption { get; set; } =
         {
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "Gas",
                 Fill = new SolidColorPaint(GBC),
@@ -458,7 +501,7 @@ namespace OptiHeatPro.ViewModels
                 GeometryFill = new SolidColorPaint(GBC),
                 GeometryStroke = new SolidColorPaint(SKColors.DarkSlateGray)
             },
-            new StackedStepAreaSeries<double>
+            new StackedStepAreaSeries<ObservableValue>
             {
                 Name = "Oil",
                 Fill = new SolidColorPaint(SKColors.Brown.WithAlpha(100)),
@@ -484,7 +527,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] WinterProductionCosts { get; set; } =
         {
-            new StepLineSeries<decimal>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "Production Cost",
                 Values = WTotalProductionCost,
@@ -497,7 +540,7 @@ namespace OptiHeatPro.ViewModels
         };
         public ISeries[] WinterEmissions { get; set; } =
         {
-            new StepLineSeries<double>
+            new StepLineSeries<ObservableValue>
             {
                 Name = "CO2 Emissions",
                 Values = WTotalCO2Emissions,
@@ -538,7 +581,7 @@ namespace OptiHeatPro.ViewModels
                 new Axis
                 {
                     //Name = "DKK",
-                    Labeler = (value) => Math.Round(value,2) + " DKK",
+                    Labeler = (value) => Math.Round(value,2) + " DKK/MWh",
                     Position = LiveChartsCore.Measure.AxisPosition.End,
                     MinLimit = 0
                 }
