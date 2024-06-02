@@ -39,11 +39,13 @@
             </TabItem>
         </TabControl>
 
-        <Grid Grid.Row="1" ColumnDefinitions="*,200,30,30,400,*">
-            <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">Reduce CO2 emissions by:</TextBlock>
-            <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding co2ReductionPercentage}"></TextBlock>
-            <TextBlock Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left">%</TextBlock>
-            <Slider Grid.Column="4" Maximum="100" Value="{Binding co2ReductionPercentage}" x:Name="slider" />
+        <Grid Grid.Row="1" ColumnDefinitions="*,120,280,400,120,*">
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18">
+                <Run Text="Reduce CO2 emissions by:"/>
+                <Run Text="{Binding co2ReductionPercentage}" FontWeight="Bold"/>
+                <Run Text="%" FontWeight="Bold"/> 
+            </TextBlock>
+            <Slider Grid.Column="3" Maximum="100" Value="{Binding co2ReductionPercentage}"/>
         </Grid>
 
     </Grid>

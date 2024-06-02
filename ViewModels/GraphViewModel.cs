@@ -79,14 +79,14 @@ namespace OptiHeatPro.ViewModels
             WElectricityPrice.Clear();
             WHeatDemand.Clear();
             WDnT.Clear();
-            foreach(var entry in _heatingData.SummerData)
+            foreach(var entry in _heatingData.SummerData!)
             {
                 
                 SElectricityPrice.Add(entry.ElectricityPrice);
                 SHeatDemand.Add(entry.HeatDemand);
                 SDnT.Add(Convert.ToString(entry.TimeFrom));
             }
-            foreach(var entry in _heatingData.WinterData)
+            foreach(var entry in _heatingData.WinterData!)
             {
                 
                 WElectricityPrice.Add(entry.ElectricityPrice);
@@ -106,7 +106,7 @@ namespace OptiHeatPro.ViewModels
             WTotalGasConsumption.Clear();
             WTotalOilConsumption.Clear();
             WTotalCO2Emissions.Clear();
-            List<Result> Results = optimizer.Optimize(_heatingData.WinterData, (double)co2ReductionPercentage/100);
+            List<Result> Results = optimizer.Optimize(_heatingData.WinterData!, (double)co2ReductionPercentage/100);
 
             foreach (var entry in Results)
             {
@@ -134,7 +134,7 @@ namespace OptiHeatPro.ViewModels
             STotalGasConsumption.Clear();
             STotalOilConsumption.Clear();
             STotalCO2Emissions.Clear();
-            List<Result> Results = optimizer.Optimize(_heatingData.SummerData, (double)co2ReductionPercentage/100);
+            List<Result> Results = optimizer.Optimize(_heatingData.SummerData!, (double)co2ReductionPercentage/100);
 
             foreach (var entry in Results)
             {
@@ -557,7 +557,7 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Labels = WDnT,
+                    Labels = WDnT
                 }
             };
         public Axis[] SXAxes { get; set; }
@@ -565,7 +565,7 @@ namespace OptiHeatPro.ViewModels
             {
                 new Axis
                 {
-                    Labels = SDnT,
+                    Labels = SDnT
                 }
             };
         public Axis[] HEYAxes { get; set; }
