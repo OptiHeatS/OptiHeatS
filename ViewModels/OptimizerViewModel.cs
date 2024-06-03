@@ -30,6 +30,7 @@ namespace OptiHeatPro.ViewModels
         {
             WTotalResult = new Result();
             STotalResult = new Result();
+            // Check if co2 reduction slider value has changed and update data.
             this.PropertyChanged += (sender, e) =>
             {
                 if (e.PropertyName == nameof(co2ReductionPercentage))
@@ -43,12 +44,14 @@ namespace OptiHeatPro.ViewModels
 
         private void CalculateResults()
         {
+            // Optimizing data from heatingData
             HeatingData heatingData = new HeatingData();
             heatingData.Read();
             Optimizer optimizer = new Optimizer();
             List<Result> results = optimizer.Optimize(heatingData.WinterData, co2ReductionPercentage);
 
             Result newWTotalResult = new Result();
+            // Summing up Winter results from all the given optimizer data.
             foreach (var result in results)
             {
                 newWTotalResult.TotalElectricityProduction += result.TotalElectricityProduction;
@@ -63,6 +66,7 @@ namespace OptiHeatPro.ViewModels
             results = optimizer.Optimize(heatingData.SummerData, co2ReductionPercentage);
 
             Result newSTotalResult = new Result();
+            // Summing up Summer results.
             foreach (var result in results)
             {
                 newSTotalResult.TotalElectricityProduction += result.TotalElectricityProduction;

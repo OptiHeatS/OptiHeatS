@@ -5,6 +5,7 @@ namespace OptiHeatPro.ViewModels
 {
     public class HeatingViewModel : ViewModelBase
     {
+        // Heating data lists.
         private HeatingData _heatingData;
         private ObservableCollection<DataEntry> _winterData;
         private ObservableCollection<DataEntry> _summerData;
