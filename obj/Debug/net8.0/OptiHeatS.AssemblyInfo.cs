@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptiHeatS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d44c14b0d7b45bb541e3ef724b668dc25d5c5bc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c81b33a26a99bd4bb3036f99d4bbbd4ed9054b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptiHeatS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptiHeatS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
