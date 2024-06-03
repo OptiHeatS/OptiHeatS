@@ -12,9 +12,7 @@
           "Avalonia.Controls.DataGrid": "11.0.10",
           "Avalonia.Desktop": "11.0.10",
           "Avalonia.Diagnostics": "11.0.10",
-          "Avalonia.Fonts.Inter": "11.0.10",
           "Avalonia.ReactiveUI": "11.0.10",
-          "Avalonia.Themes.Fluent": "11.0.10",
           "CommunityToolkit.Mvvm": "8.2.2",
           "LiveChartsCore.SkiaSharpView.Avalonia": "2.0.0-rc2",
           "Material.Avalonia": "3.6.0",
@@ -149,17 +147,6 @@
           }
         }
       },
-      "Avalonia.Fonts.Inter/11.0.10": {
-        "dependencies": {
-          "Avalonia": "11.0.10"
-        },
-        "runtime": {
-          "lib/net6.0/Avalonia.Fonts.Inter.dll": {
-            "assemblyVersion": "11.0.10.0",
-            "fileVersion": "11.0.10.0"
-          }
-        }
-      },
       "Avalonia.FreeDesktop/11.0.10": {
         "dependencies": {
           "Avalonia": "11.0.10",
@@ -223,17 +210,6 @@
         },
         "runtime": {
           "lib/net6.0/Avalonia.Skia.dll": {
-            "assemblyVersion": "11.0.10.0",
-            "fileVersion": "11.0.10.0"
-          }
-        }
-      },
-      "Avalonia.Themes.Fluent/11.0.10": {
-        "dependencies": {
-          "Avalonia": "11.0.10"
-        },
-        "runtime": {
-          "lib/net6.0/Avalonia.Themes.Fluent.dll": {
             "assemblyVersion": "11.0.10.0",
             "fileVersion": "11.0.10.0"
           }
@@ -1078,13 +1054,6 @@
       "path": "avalonia.diagnostics/11.0.10",
       "hashPath": "avalonia.diagnostics.11.0.10.nupkg.sha512"
     },
-    "Avalonia.Fonts.Inter/11.0.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4hVv6u5o8NxfPv2pl1Mg0VTYzxHkc85Wnye3sQJCQtbrd8s9v3DSEYK68zT4wBFlCtc4JHUP85PfyZuoTkf08A==",
-      "path": "avalonia.fonts.inter/11.0.10",
-      "hashPath": "avalonia.fonts.inter.11.0.10.nupkg.sha512"
-    },
     "Avalonia.FreeDesktop/11.0.10": {
       "type": "package",
       "serviceable": true,
@@ -1119,13 +1088,6 @@
       "sha512": "sha512-0rDySePqUkg6cMBZEXp+5P04XgyIXOcqhsCaWhrwFAqxcp5qKjILSCNvt0pden3TqCRjuNuGaWGV+qyk58l9vA==",
       "path": "avalonia.skia/11.0.10",
       "hashPath": "avalonia.skia.11.0.10.nupkg.sha512"
-    },
-    "Avalonia.Themes.Fluent/11.0.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-V7xu7ddtUFwYHb+u3S4he2/PGGUHkeTI66j3PyGTZi0Uz8Ma4prb/Lgz7Qd/vpO4lukxw1G4DmxB1tClNS9qUw==",
-      "path": "avalonia.themes.fluent/11.0.10",
-      "hashPath": "avalonia.themes.fluent.11.0.10.nupkg.sha512"
     },
     "Avalonia.Themes.Simple/11.0.10": {
       "type": "package",

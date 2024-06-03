@@ -177,22 +177,6 @@
           }
         }
       },
-      "Avalonia.Fonts.Inter/11.0.10": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.10"
-        },
-        "compile": {
-          "lib/net6.0/Avalonia.Fonts.Inter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Avalonia.Fonts.Inter.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Avalonia.FreeDesktop/11.0.10": {
         "type": "package",
         "dependencies": {
@@ -281,22 +265,6 @@
         },
         "runtime": {
           "lib/net6.0/Avalonia.Skia.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Avalonia.Themes.Fluent/11.0.10": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.10"
-        },
-        "compile": {
-          "lib/net6.0/Avalonia.Themes.Fluent.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Avalonia.Themes.Fluent.dll": {
             "related": ".xml"
           }
         }
@@ -1805,22 +1773,6 @@
         "lib/netstandard2.0/Avalonia.Diagnostics.xml"
       ]
     },
-    "Avalonia.Fonts.Inter/11.0.10": {
-      "sha512": "4hVv6u5o8NxfPv2pl1Mg0VTYzxHkc85Wnye3sQJCQtbrd8s9v3DSEYK68zT4wBFlCtc4JHUP85PfyZuoTkf08A==",
-      "type": "package",
-      "path": "avalonia.fonts.inter/11.0.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.fonts.inter.11.0.10.nupkg.sha512",
-        "avalonia.fonts.inter.nuspec",
-        "lib/net6.0/Avalonia.Fonts.Inter.dll",
-        "lib/net6.0/Avalonia.Fonts.Inter.xml",
-        "lib/netstandard2.0/Avalonia.Fonts.Inter.dll",
-        "lib/netstandard2.0/Avalonia.Fonts.Inter.xml"
-      ]
-    },
     "Avalonia.FreeDesktop/11.0.10": {
       "sha512": "QLVn1pjCe5ez4cH5B+NmhT61xK502mjxPxkswIbag5FB45tuNOF5zRszH+dN81rNw+VSf/J6PVXdmHz/FojyDw==",
       "type": "package",
@@ -1900,22 +1852,6 @@
         "lib/net6.0/Avalonia.Skia.xml",
         "lib/netstandard2.0/Avalonia.Skia.dll",
         "lib/netstandard2.0/Avalonia.Skia.xml"
-      ]
-    },
-    "Avalonia.Themes.Fluent/11.0.10": {
-      "sha512": "V7xu7ddtUFwYHb+u3S4he2/PGGUHkeTI66j3PyGTZi0Uz8Ma4prb/Lgz7Qd/vpO4lukxw1G4DmxB1tClNS9qUw==",
-      "type": "package",
-      "path": "avalonia.themes.fluent/11.0.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.themes.fluent.11.0.10.nupkg.sha512",
-        "avalonia.themes.fluent.nuspec",
-        "lib/net6.0/Avalonia.Themes.Fluent.dll",
-        "lib/net6.0/Avalonia.Themes.Fluent.xml",
-        "lib/netstandard2.0/Avalonia.Themes.Fluent.dll",
-        "lib/netstandard2.0/Avalonia.Themes.Fluent.xml"
       ]
     },
     "Avalonia.Themes.Simple/11.0.10": {
@@ -4858,9 +4794,7 @@
       "Avalonia.Controls.DataGrid >= 11.0.10",
       "Avalonia.Desktop >= 11.0.10",
       "Avalonia.Diagnostics >= 11.0.10",
-      "Avalonia.Fonts.Inter >= 11.0.10",
       "Avalonia.ReactiveUI >= 11.0.10",
-      "Avalonia.Themes.Fluent >= 11.0.10",
       "CommunityToolkit.Mvvm >= 8.2.2",
       "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2",
       "Material.Avalonia >= 3.6.0",
@@ -4868,24 +4802,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Benediktas\\.nuget\\packages\\": {}
+    "C:\\Users\\simon\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
+      "projectUniqueName": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
       "projectName": "OptiHeatS",
-      "projectPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\OptiHeatS.csproj",
-      "packagesPath": "C:\\Users\\Benediktas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Benediktas\\Desktop\\OptiHeatS\\obj\\",
+      "projectPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\OptiHeatS.csproj",
+      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\simon\\Desktop\\C#\\semester project\\OptiHeatS\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Benediktas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4898,6 +4840,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4920,15 +4867,7 @@
             "target": "Package",
             "version": "[11.0.10, )"
           },
-          "Avalonia.Fonts.Inter": {
-            "target": "Package",
-            "version": "[11.0.10, )"
-          },
           "Avalonia.ReactiveUI": {
-            "target": "Package",
-            "version": "[11.0.10, )"
-          },
-          "Avalonia.Themes.Fluent": {
             "target": "Package",
             "version": "[11.0.10, )"
           },
@@ -4965,7 +4904,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

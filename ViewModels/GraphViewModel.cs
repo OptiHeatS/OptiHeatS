@@ -1,17 +1,10 @@
-using System.Collections.Generic;
-using System.Windows.Markup;
-using CommunityToolkit.Mvvm.ComponentModel;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
 using System.Collections.ObjectModel;
 using ReactiveUI;
-using System.Dynamic;
-using OptiHeatPro.Views;
-using System.Security.Cryptography.X509Certificates;
 using LiveChartsCore.Defaults;
 
 namespace OptiHeatPro.ViewModels

@@ -466,13 +466,11 @@ C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.C
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Controls.DataGrid.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Desktop.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Diagnostics.dll
-C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Fonts.Inter.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.FreeDesktop.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Native.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.ReactiveUI.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Remote.Protocol.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Skia.dll
-C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Themes.Fluent.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Themes.Simple.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.Win32.dll
 C:\Users\simon\Desktop\C#\semester project\OptiHeatS\bin\Debug\net8.0\Avalonia.X11.dll
