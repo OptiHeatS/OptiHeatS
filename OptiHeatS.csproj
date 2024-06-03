@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
+    <AvaloniaResource Include="Components\Data Visualization\Assets\**" />
     <PackageReference Include="Avalonia" Version="11.0.10" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.10" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.10" />
