@@ -12,7 +12,7 @@
         Title="OptiHeatS - Heating optimization software"
         Width="1260" Height="660">
     <DockPanel LastChildFill="True">
-        <Border CornerRadius="0" Background="#e2000f" DockPanel.Dock="Top" HorizontalAlignment="Stretch" PointerPressed="TitleBar_OnPointerPressed">
+        <Border CornerRadius="0" Background="#e2000f" DockPanel.Dock="Top" HorizontalAlignment="Stretch">
             <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
